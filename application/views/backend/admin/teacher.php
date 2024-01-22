@@ -1,7 +1,7 @@
 <a href="javascript:;" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_teacher_add/');" 
     class="btn btn-primary pull-right">
     <i class="entypo-plus-circled"></i>
-    <?php echo get_phrase('yeni_öğretmen_ekle');?>
+    <?php echo get_phrase('add_new_teacher');?>
 </a> 
 <br><br>
 <table class="table table-bordered table-hover table-striped datatable" id="table_export">

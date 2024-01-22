@@ -81,7 +81,7 @@
 			
 			<li>
 				<a href="<?php echo base_url();?>index.php?login/logout">
-					Logout <i class="entypo-logout right"></i>
+					Çıkış <i class="entypo-logout right"></i>
 				</a>
 			</li>
 		</ul>
