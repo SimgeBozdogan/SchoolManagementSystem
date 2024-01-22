@@ -1,19 +1,20 @@
+<!-- Profil Yönetimi -->
 <div class="row">
 	<div class="col-md-12">
     
-    	<!------CONTROL TABS START------>
+    	<!------KONTROL TABLARI BAŞLANGIÇ------>
 		<ul class="nav nav-tabs bordered">
 
 			<li class="active">
             	<a href="#list" data-toggle="tab"><i class="entypo-user"></i> 
-					<?php echo ('Manage Profile');?>
-                    	</a></li>
+					<?php echo ('Profil Yönetimi');?>
+                </a></li>
 		</ul>
-    	<!------CONTROL TABS END------>
+    	<!------KONTROL TABLARI SON------>
         
 	
 		<div class="tab-content">
-        	<!----EDITING FORM STARTS-->
+        	<!----DÜZENLEME FORMU BAŞLANGIÇ-->
 			<div class="tab-pane box active" id="list" style="padding: 5px">
                 <div class="box-content">
 					<?php 
@@ -22,21 +23,21 @@
                         <?php echo form_open(base_url() . 'index.php?student/manage_profile/update_profile_info' , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top' , 'enctype' => 'multipart/form-data'));?>
                             
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Name');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Ad');?></label>
                                 <div class="col-sm-5">
                                     <input type="text" class="form-control" name="name" value="<?php echo $row['name'];?>"/>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Email');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('E-Posta');?></label>
                                 <div class="col-sm-5">
                                     <input type="text" class="form-control" name="email" value="<?php echo $row['email'];?>"/>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="field-1" class="col-sm-3 control-label"><?php echo ('Photo');?></label>
+                                <label for="field-1" class="col-sm-3 control-label"><?php echo ('Fotoğraf');?></label>
                                 
                                 <div class="col-sm-5">
                                     <div class="fileinput fileinput-new" data-provides="fileinput">
@@ -46,11 +47,11 @@
                                         <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px"></div>
                                         <div>
                                             <span class="btn btn-white btn-file">
-                                                <span class="fileinput-new">Select image</span>
-                                                <span class="fileinput-exists">Change</span>
+                                                <span class="fileinput-new">Resim Seç</span>
+                                                <span class="fileinput-exists">Değiştir</span>
                                                 <input type="file" name="userfile" accept="image/*">
                                             </span>
-                                            <a href="#" class="btn btn-orange fileinput-exists" data-dismiss="fileinput">Remove</a>
+                                            <a href="#" class="btn btn-orange fileinput-exists" data-dismiss="fileinput">Kaldır</a>
                                         </div>
                                     </div>
                                 </div>
@@ -58,7 +59,7 @@
 
                             <div class="form-group">
                                 <div class="col-sm-offset-3 col-sm-5">
-                                    <button type="submit" class="btn btn-info"><?php echo ('Update Profile');?></button>
+                                    <button type="submit" class="btn btn-info"><?php echo ('Profil Güncelle');?></button>
                                 </div>
 							</div>
                         </form>
@@ -67,30 +68,29 @@
                     ?>
                 </div>
 			</div>
-            <!----EDITING FORM ENDS-->
+            <!----DÜZENLEME FORMU SON--->
             
 		</div>
 	</div>
 </div>
 
-
-<!--password-->
+<!-- Şifre Değiştirme -->
 <div class="row">
 	<div class="col-md-12">
     
-    	<!------CONTROL TABS START------>
+    	<!------KONTROL TABLARI BAŞLANGIÇ------>
 		<ul class="nav nav-tabs bordered">
 
 			<li class="active">
             	<a href="#list" data-toggle="tab"><i class="entypo-lock"></i> 
-					<?php echo ('Change Password');?>
-                    	</a></li>
+					<?php echo ('Şifre Değiştir');?>
+                </a></li>
 		</ul>
-    	<!------CONTROL TABS END------>
+    	<!------KONTROL TABLARI SON------>
         
 	
 		<div class="tab-content">
-        	<!----EDITING FORM STARTS---->
+        	<!----DÜZENLEME FORMU BAŞLANGIÇ---->
 			<div class="tab-pane box active" id="list" style="padding: 5px">
                 <div class="box-content padded">
 					<?php 
@@ -98,26 +98,26 @@
                         ?>
                         <?php echo form_open(base_url() . 'index.php?student/manage_profile/change_password' , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Current Password');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Mevcut Şifre');?></label>
                                 <div class="col-sm-5">
                                     <input type="password" class="form-control" name="password" value=""/>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('New Password');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Yeni Şifre');?></label>
                                 <div class="col-sm-5">
                                     <input type="password" class="form-control" name="new_password" value=""/>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Confirm new password');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Yeni Şifre Onayla');?></label>
                                 <div class="col-sm-5">
                                     <input type="password" class="form-control" name="confirm_new_password" value=""/>
                                 </div>
                             </div>
                             <div class="form-group">
                               <div class="col-sm-offset-3 col-sm-5">
-                                  <button type="submit" class="btn btn-info"><?php echo ('Update Profile');?></button>
+                                  <button type="submit" class="btn btn-info"><?php echo ('Profil Güncelle');?></button>
                               </div>
 								</div>
                         </form>
@@ -126,7 +126,7 @@
                     ?>
                 </div>
 			</div>
-            <!----EDITING FORM ENDS-->
+            <!----DÜZENLEME FORMU SON--->
             
 		</div>
 	</div>

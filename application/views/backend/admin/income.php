@@ -1,14 +1,13 @@
-
 <hr />
 <table class="table table-bordered table-hover table-striped datatable" id="table_export">
     <thead>
         <tr>
             <th><div>#</div></th>
-            <th><div><?php echo ('Title');?></div></th>
-            <th><div><?php echo ('Description');?></div></th>
-            <th><div><?php echo ('Method');?></div></th>
-            <th><div><?php echo ('Amount');?></div></th>
-            <th><div><?php echo ('Date');?></div></th>
+            <th><div><?php echo ('Başlık');?></div></th>
+            <th><div><?php echo ('Açıklama');?></div></th>
+            <th><div><?php echo ('Ödeme Yöntemi');?></div></th>
+            <th><div><?php echo ('Miktar');?></div></th>
+            <th><div><?php echo ('Tarih');?></div></th>
         </tr>
     </thead>
     <tbody>
@@ -26,11 +25,11 @@
             <td>
             	<?php 
             		if ($row['method'] == 1)
-            			echo ('Cash');
+            			echo ('Nakit');
             		if ($row['method'] == 2)
-            			echo ('Cheque');
+            			echo ('Çek');
             		if ($row['method'] == 3)
-            			echo ('Card');
+            			echo ('Kart');
                     if ($row['method'] == 'paypal')
                     	echo 'Paypal';
             	?>
@@ -42,21 +41,17 @@
     </tbody>
 </table>
 
-
-
 <!-----  DATA TABLE EXPORT CONFIGURATIONS ---->                      
 <script type="text/javascript">
 
 	jQuery(document).ready(function($)
 	{
-		
-
 		var datatable = $("#table_export").dataTable({
 			"sPaginationType": "bootstrap",
 			"sDom": "<'row'<'col-xs-3 col-left'l><'col-xs-9 col-right'<'export-data'T>f>r>t<'row'<'col-xs-3 col-left'i><'col-xs-9 col-right'p>>",
 			"oTableTools": {
 				"aButtons": [
-					
+
 					{
 						"sExtends": "xls",
 						"mColumns": [1,2,3,4,5]
@@ -85,7 +80,6 @@
 					},
 				]
 			},
-			
 		});
 		
 		$(".dataTables_wrapper select").select2({
@@ -94,4 +88,3 @@
 	});
 		
 </script>
-

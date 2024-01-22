@@ -1,22 +1,22 @@
 <div class="row">
 	<div class="col-md-12">
     
-    	<!------CONTROL TABS START------>
+    	<!------KONTROL SEKMELEME BAŞLANGICI------>
 		<ul class="nav nav-tabs bordered">
 			<li class="active">
             	<a href="#list" data-toggle="tab"><i class="entypo-menu"></i> 
-					<?php echo ('Class Routine List');?>
-                    	</a></li>
+					<?php echo ('Sınıf Rutin Listesi');?>
+                </a></li>
 			<li>
             	<a href="#add" data-toggle="tab"><i class="entypo-plus-circled"></i>
-					<?php echo ('Add Class Routine');?>
-                    	</a></li>
+					<?php echo ('Sınıf Rutini Ekle');?>
+                </a></li>
 		</ul>
-    	<!------CONTROL TABS END------>
+    	<!------KONTROL SEKMELEME SONU------>
         
 	
 		<div class="tab-content">
-            <!----TABLE LISTING STARTS-->
+            <!----TABLO LİSTESİ BAŞLANGICI--->
             <div class="tab-pane active" id="list">
 				<div class="panel-group joined" id="accordion-test-2">
                 	<?php 
@@ -30,7 +30,7 @@
                                 <div class="panel-heading">
                                 		<h4 class="panel-title">
                                     <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapse<?php echo $row['class_id'];?>">
-                                        <i class="entypo-rss"></i> Class <?php echo $row['name'];?>
+                                        <i class="entypo-rss"></i> Sınıf <?php echo $row['name'];?>
                                     </a>
                                     </h4>
                                 </div>
@@ -42,13 +42,13 @@
                                                 <?php 
                                                 for($d=1;$d<=7;$d++):
                                                 
-                                                if($d==1)$day='sunday';
-                                                else if($d==2)$day='monday';
-                                                else if($d==3)$day='tuesday';
-                                                else if($d==4)$day='wednesday';
-                                                else if($d==5)$day='thursday';
-                                                else if($d==6)$day='friday';
-                                                else if($d==7)$day='saturday';
+                                                if($d==1)$day='pazar';
+                                                else if($d==2)$day='pazartesi';
+                                                else if($d==3)$day='sali';
+                                                else if($d==4)$day='carsamba';
+                                                else if($d==5)$day='persembe';
+                                                else if($d==6)$day='cuma';
+                                                else if($d==7)$day='cumartesi';
                                                 ?>
                                                 <tr class="gradeA">
                                                     <td width="100"><?php echo strtoupper($day);?></td>
@@ -70,14 +70,14 @@
 																<li>
                                                                 <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_edit_class_routine/<?php echo $row2['class_routine_id'];?>');">
                                                                     <i class="entypo-pencil"></i>
-                                                                        <?php echo ('Edit');?>
+                                                                        <?php echo ('Düzenle');?>
                                                                     			</a>
                                                          </li>
                                                          
                                                          <li>
                                                             <a href="#" onclick="confirm_modal('<?php echo base_url();?>index.php?admin/class_routine/delete/<?php echo $row2['class_routine_id'];?>');">
                                                                 <i class="entypo-trash"></i>
-                                                                    <?php echo ('Delete');?>
+                                                                    <?php echo ('Sil');?>
                                                                 </a>
                                                     		</li>
 															</ul>
@@ -99,19 +99,19 @@
 					?>
   				</div>
 			</div>
-            <!----TABLE LISTING ENDS--->
+            <!----TABLO LİSTESİ SONU--->
             
             
-			<!----CREATION FORM STARTS---->
+			<!----OLUŞTURMA FORMU BAŞLANGICI--->
 			<div class="tab-pane box" id="add" style="padding: 5px">
                 <div class="box-content">
                 	<?php echo form_open(base_url() . 'index.php?admin/class_routine/create' , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Class');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Sınıf');?></label>
                                 <div class="col-sm-5">
                                     <select name="class_id" class="form-control" style="width:100%;"
                                         onchange="return get_class_subject(this.value)">
-                                        <option value=""><?php echo ('Select Class');?></option>
+                                        <option value=""><?php echo ('Sınıf Seç');?></option>
                                     	<?php 
 										$classes = $this->db->get('class')->result_array();
 										foreach($classes as $row):
@@ -124,79 +124,27 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Subject');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Ders');?></label>
                                 <div class="col-sm-5">
                                     <select name="subject_id" class="form-control" style="width:100%;" id="subject_selection_holder">
-                                        <option value=""><?php echo ('Select Class First');?></option>
+                                        <option value=""><?php echo ('Önce Sınıf Seçiniz');?></option>
                                     	
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Day');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Gün');?></label>
                                 <div class="col-sm-5">
                                     <select name="day" class="form-control" style="width:100%;">
-                                        <option value="sunday">sunday</option>
-                                        <option value="monday">monday</option>
-                                        <option value="tuesday">tuesday</option>
-                                        <option value="wednesday">wednesday</option>
-                                        <option value="thursday">thursday</option>
-                                        <option value="friday">friday</option>
-                                        <option value="saturday">saturday</option>
+                                        <option value="sunday">pazar</option>
+                                        <option value="monday">pazartesi</option>
+                                        <option value="tuesday">salı</option>
+                                        <option value="wednesday">çarşamba</option>
+                                        <option value="thursday">perşembe</option>
+                                        <option value="friday">cuma</option>
+                                        <option value="saturday">cumartesi</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Starting Time');?></label>
-                                <div class="col-sm-5">
-                                    <select name="time_start" class="form-control" style="width:100%;">
-										<?php for($i = 0; $i <= 12 ; $i++):?>
-                                            <option value="<?php echo $i;?>"><?php echo $i;?></option>
-                                        <?php endfor;?>
-                                    </select>
-                                    <select name="starting_ampm" class="form-control" style="width:100%">
-                                    	<option value="1">am</option>
-                                    	<option value="2">pm</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Ending Time');?></label>
-                                <div class="col-sm-5">
-                                    <select name="time_end" class="form-control" style="width:100%;">
-										<?php for($i = 0; $i <= 12 ; $i++):?>
-                                            <option value="<?php echo $i;?>"><?php echo $i;?></option>
-                                        <?php endfor;?>
-                                    </select>
-                                    <select name="ending_ampm" class="form-control" style="width:100%">
-                                    	<option value="1">am</option>
-                                    	<option value="2">pm</option>
-                                    </select>
-                                </div>
-                            </div>
-                        <div class="form-group">
-                              <div class="col-sm-offset-3 col-sm-5">
-                                  <button type="submit" class="btn btn-info"><?php echo ('Add Class Routine');?></button>
-                              </div>
-							</div>
-                    </form>                
-                </div>                
-			</div>
-			<!----CREATION FORM ENDS-->
-            
-		</div>
-	</div>
-</div>
-
-<script type="text/javascript">
-    function get_class_subject(class_id) {
-        $.ajax({
-            url: '<?php echo base_url();?>index.php?admin/get_class_subject/' + class_id ,
-            success: function(response)
-            {
-                jQuery('#subject_selection_holder').html(response);
-            }
-        });
-    }
-</script>
-
+                                <label class="col-sm-3 control

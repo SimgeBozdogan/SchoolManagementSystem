@@ -11,7 +11,6 @@
         <!-- logo collapse icon -->
         <div class="sidebar-collapse" style="">
             <a href="#" class="sidebar-collapse-icon with-animation">
-
                 <i class="entypo-menu"></i>
             </a>
         </div>
@@ -26,55 +25,55 @@
 
     <div style="border-top:1px solid rgba(69, 74, 84, 0.7);"></div>	
     <ul id="main-menu" class="">
-        <!-- add class "multiple-expanded" to allow multiple submenus to open -->
-        <!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
+        <!-- class "multiple-expanded" ekleyerek birden fazla alt menünün açılmasına izin verin -->
+        <!-- "auto-inherit-active-class" sınıfı, zaten "active" sınıfı ile işaretlenmiş olan üst öğeler için otomatik olarak "active" sınıfını ekler -->
 
 
-        <!-- DASHBOARD -->
+        <!-- ADMİN PANELİ -->
         <li class="<?php if ($page_name == 'dashboard') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/dashboard">
                 <i class="entypo-gauge"></i>
-                <span><?php echo ('Dashboard'); ?></span>
+                <span><?php echo ('Admin Paneli'); ?></span>
             </a>
         </li>
 
 
 
-        <!-- TEACHER -->
+        <!-- ÖĞRETMEN -->
         <li class="<?php if ($page_name == 'teacher') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/teacher_list">
                 <i class="entypo-users"></i>
-                <span><?php echo ('Teacher'); ?></span>
+                <span><?php echo ('Öğretmen'); ?></span>
             </a>
         </li>
 
 
 
-        <!-- SUBJECT -->
+        <!-- DERS -->
         <li class="<?php if ($page_name == 'subject') echo ' active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/subject">
                 <i class="entypo-docs"></i>
-                <span><?php echo ('Subject'); ?></span>
+                <span><?php echo ('Ders'); ?></span>
             </a>
         </li>
 
-        <!-- CLASS ROUTINE -->
+        <!-- DERS PROGRAMI -->
         <li class="<?php if ($page_name == 'class_routine') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/class_routine">
                 <i class="entypo-target"></i>
-                <span><?php echo ('Class Routine'); ?></span>
+                <span><?php echo ('Ders Programı'); ?></span>
             </a>
         </li>
         
-		<!-- STUDY MATERIAL -->
+		<!-- DERS MATERYALLERİ -->
         <li class="<?php if ($page_name == 'study_material') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/study_material">
                 <i class="entypo-book-open"></i>
-                <span><?php echo ('Study Material'); ?></span>
+                <span><?php echo ('Ders Materyalleri'); ?></span>
             </a>
         </li>
 
-        <!-- EXAMS -->
+        <!-- SINAVLAR -->
         <li class="<?php
         if ($page_name == 'exam' ||
                 $page_name == 'grade' ||
@@ -83,64 +82,64 @@
         ?> ">
             <a href="#">
                 <i class="entypo-graduation-cap"></i>
-                <span><?php echo ('Exam'); ?></span>
+                <span><?php echo ('Sınav'); ?></span>
             </a>
             <ul>
 
                 <li class="<?php if ($page_name == 'marks') echo 'active'; ?> ">
                     <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/marks">
-                        <span><i class="entypo-dot"></i> <?php echo ('Manage Marks'); ?></span>
+                        <span><i class="entypo-dot"></i> <?php echo ('Notları Yönet'); ?></span>
                     </a>
                 </li>
             </ul>
         </li>
 
-        <!-- PAYMENT -->
+        <!-- ÖDEMELER -->
         <li class="<?php if ($page_name == 'invoice') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/invoice">
                 <i class="entypo-credit-card"></i>
-                <span><?php echo ('Payment'); ?></span>
+                <span><?php echo ('Ödemeler'); ?></span>
             </a>
         </li>
 
 
-        <!-- LIBRARY -->
+        <!-- KÜTÜPHANE -->
         <li class="<?php if ($page_name == 'book') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/book">
                 <i class="entypo-book"></i>
-                <span><?php echo ('Library'); ?></span>
+                <span><?php echo ('Kütüphane'); ?></span>
             </a>
         </li>
 
-        <!-- TRANSPORT -->
+        <!-- ULAŞIM -->
         <li class="<?php if ($page_name == 'transport') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/transport">
                 <i class="entypo-location"></i>
-                <span><?php echo ('Transport'); ?></span>
+                <span><?php echo ('Ulaşım'); ?></span>
             </a>
         </li>
 
-        <!-- NOTICEBOARD -->
+        <!-- DUYURU PANOSU -->
         <li class="<?php if ($page_name == 'noticeboard') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/noticeboard">
                 <i class="entypo-doc-text-inv"></i>
-                <span><?php echo ('Noticeboard'); ?></span>
+                <span><?php echo ('Duyuru Panosu'); ?></span>
             </a>
         </li>
 
-        <!-- MESSAGE -->
+        <!-- MESAJ -->
         <li class="<?php if ($page_name == 'message') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/message">
                 <i class="entypo-mail"></i>
-                <span><?php echo ('Message'); ?></span>
+                <span><?php echo ('Mesaj'); ?></span>
             </a>
         </li>
 
-        <!-- ACCOUNT -->
+        <!-- HESAP -->
         <li class="<?php if ($page_name == 'manage_profile') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/manage_profile">
                 <i class="entypo-lock"></i>
-                <span><?php echo ('Account'); ?></span>
+                <span><?php echo ('Hesap'); ?></span>
             </a>
         </li>
 

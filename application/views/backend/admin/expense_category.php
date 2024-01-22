@@ -1,16 +1,15 @@
-
 <a href="javascript:;" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/expense_category_add/');" 
 class="btn btn-primary pull-right">
 <i class="entypo-plus-circled"></i>
-<?php echo ('Add new expense category');?>
+<?php echo ('Yeni Gider Kategorisi Ekle');?>
 </a> 
 <br><br>
 <table class="table table-bordered table-hover table-striped datatable" id="table_export">
     <thead>
         <tr>
             <th><div>#</div></th>
-            <th><div><?php echo ('Name');?></div></th>
-            <th><div><?php echo ('Options');?></div></th>
+            <th><div><?php echo ('Ad');?></div></th>
+            <th><div><?php echo ('Seçenekler');?></div></th>
         </tr>
     </thead>
     <tbody>
@@ -26,7 +25,7 @@ class="btn btn-primary pull-right">
                 
                 <div class="btn-group">
                     <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">
-                        Action <span class="caret"></span>
+					Değiştir <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu dropdown-default pull-right" role="menu">
                         
@@ -34,7 +33,7 @@ class="btn btn-primary pull-right">
                         <li>
                         	<a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/expense_category_edit/<?php echo $row['expense_category_id'];?>');">
                             	<i class="entypo-pencil"></i>
-									<?php echo ('Edit');?>
+									<?php echo ('Düzenle');?>
                                	</a>
                         				</li>
                         <li class="divider"></li>
@@ -43,7 +42,7 @@ class="btn btn-primary pull-right">
                         <li>
                         	<a href="#" onclick="confirm_modal('<?php echo base_url();?>index.php?admin/expense_category/delete/<?php echo $row['expense_category_id'];?>');">
                             	<i class="entypo-trash"></i>
-									<?php echo ('Delete');?>
+									<?php echo ('Sil');?>
                                	</a>
                         				</li>
                     </ul>
@@ -107,4 +106,3 @@ class="btn btn-primary pull-right">
 	});
 		
 </script>
-

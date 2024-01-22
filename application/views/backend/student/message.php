@@ -14,7 +14,7 @@
         <!-- compose new email button -->
         <div class="mail-sidebar-row hidden-xs">
             <a href="<?php echo base_url(); ?>index.php?student/message/message_new" class="btn btn-success btn-icon btn-block">
-                <?php echo ('New Message'); ?>
+                <?php echo ('Yeni Mesaj'); ?>
                 <i class="entypo-pencil"></i>
             </a>
         </div>

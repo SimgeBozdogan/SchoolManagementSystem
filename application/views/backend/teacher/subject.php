@@ -43,7 +43,7 @@
                                     <li>
                                         <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_edit_subject/<?php echo $row['subject_id'];?>');">
                                             <i class="entypo-pencil"></i>
-                                                <?php echo ('Edit');?>
+                                                <?php echo ('Düzenle');?>
                                             </a>
                                                     </li>
                                     <li class="divider"></li>
@@ -52,7 +52,7 @@
                                     <li>
                                         <a href="#" onclick="confirm_modal('<?php echo base_url();?>index.php?teacher/subject/delete/<?php echo $row['subject_id'];?>/<?php echo $class_id;?>');">
                                             <i class="entypo-trash"></i>
-                                                <?php echo ('Delete');?>
+                                                <?php echo ('Sil');?>
                                             </a>
                                                     </li>
                                 </ul>

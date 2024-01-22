@@ -1,20 +1,19 @@
-
 <a href="javascript:;" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/expense_add/');" 
 class="btn btn-primary pull-right">
 <i class="entypo-plus-circled"></i>
-<?php echo ('Add new expense');?>
+<?php echo ('Yeni Gider Ekle');?>
 </a> 
 <br><br>
 <table class="table table-bordered table-hover table-striped datatable" id="table_export">
     <thead>
         <tr>
             <th><div>#</div></th>
-            <th><div><?php echo ('Title');?></div></th>
-            <th><div><?php echo ('Category');?></div></th>
-            <th><div><?php echo ('Method');?></div></th>
-            <th><div><?php echo ('Amount');?></div></th>
-            <th><div><?php echo ('Date');?></div></th>
-            <th><div><?php echo ('Options');?></div></th>
+            <th><div><?php echo ('Başlık');?></div></th>
+            <th><div><?php echo ('Kategori');?></div></th>
+            <th><div><?php echo ('Yöntem');?></div></th>
+            <th><div><?php echo ('Miktar');?></div></th>
+            <th><div><?php echo ('Tarih');?></div></th>
+            <th><div><?php echo ('Seçenekler');?></div></th>
         </tr>
     </thead>
     <tbody>
@@ -37,11 +36,11 @@ class="btn btn-primary pull-right">
             <td>
             	<?php 
             		if ($row['method'] == 1)
-            			echo ('Cash');
+            			echo ('Nakit');
             		if ($row['method'] == 2)
-            			echo ('Cheque');
+            			echo ('Çek');
             		if ($row['method'] == 3)
-            			echo ('Card');
+            			echo ('Kart');
             	?>
             </td>
             <td><?php echo $row['amount'];?></td>
@@ -50,7 +49,7 @@ class="btn btn-primary pull-right">
                 
                 <div class="btn-group">
                     <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">
-                        Action <span class="caret"></span>
+					Değiştir <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu dropdown-default pull-right" role="menu">
                         
@@ -58,7 +57,7 @@ class="btn btn-primary pull-right">
                         <li>
                         	<a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/expense_edit/<?php echo $row['payment_id'];?>');">
                             	<i class="entypo-pencil"></i>
-									<?php echo ('Edit');?>
+									<?php echo ('Düzenle');?>
                                	</a>
                         				</li>
                         <li class="divider"></li>
@@ -67,7 +66,7 @@ class="btn btn-primary pull-right">
                         <li>
                         	<a href="#" onclick="confirm_modal('<?php echo base_url();?>index.php?admin/expense/delete/<?php echo $row['payment_id'];?>');">
                             	<i class="entypo-trash"></i>
-									<?php echo ('Delete');?>
+									<?php echo ('Sil');?>
                                	</a>
                         				</li>
                     </ul>
@@ -78,8 +77,6 @@ class="btn btn-primary pull-right">
         <?php endforeach;?>
     </tbody>
 </table>
-
-
 
 <!-----  DATA TABLE EXPORT CONFIGURATIONS ---->                      
 <script type="text/javascript">
@@ -133,4 +130,3 @@ class="btn btn-primary pull-right">
 	});
 		
 </script>
-

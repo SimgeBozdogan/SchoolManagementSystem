@@ -1,7 +1,7 @@
 <div class="mail-header" style="padding-bottom: 27px ;">
-    <!-- title -->
+    <!-- Başlık -->
     <h3 class="mail-title">
-        <?php echo ('Write new message'); ?>
+        <?php echo ('Yeni mesaj yaz'); ?>
     </h3>
 </div>
 
@@ -11,12 +11,12 @@
 
 
     <div class="form-group">
-        <label for="subject"><?php echo ('Recipient'); ?>:</label>
+        <label for="subject"><?php echo ('Alıcı'); ?>:</label>
         <br><br>
         <select class="form-control select2" name="reciever" required>
 
-            <option value=""><?php echo ('Select a user'); ?></option>
-            <optgroup label="<?php echo ('Student'); ?>">
+            <option value=""><?php echo ('Bir kullanıcı seçin'); ?></option>
+            <optgroup label="<?php echo ('Öğrenci'); ?>">
                 <?php
                 $students = $this->db->get('student')->result_array();
                 foreach ($students as $row):
@@ -27,7 +27,7 @@
 
                 <?php endforeach; ?>
             </optgroup>
-            <optgroup label="<?php echo ('Teacher'); ?>">
+            <optgroup label="<?php echo ('Öğretmen'); ?>">
                 <?php
                 $teachers = $this->db->get('teacher')->result_array();
                 foreach ($teachers as $row):
@@ -38,7 +38,7 @@
 
                 <?php endforeach; ?>
             </optgroup>
-            <optgroup label="<?php echo ('Parent'); ?>">
+            <optgroup label="<?php echo ('Veli'); ?>">
                 <?php
                 $parents = $this->db->get('parent')->result_array();
                 foreach ($parents as $row):
@@ -55,14 +55,14 @@
 
     <div class="compose-message-editor">
         <textarea row="2" class="form-control wysihtml5" data-stylesheet-url="assets/css/wysihtml5-color.css" 
-            name="message" placeholder="<?php echo ('Write your message'); ?>" 
+            name="message" placeholder="<?php echo ('Mesajınızı yazın'); ?>" 
             id="sample_wysiwyg"></textarea>
     </div>
 
     <hr>
 
     <button type="submit" class="btn btn-success btn-icon pull-right">
-        <?php echo ('Send'); ?>
+        <?php echo ('Gönder'); ?>
         <i class="entypo-mail"></i>
 
     </button>

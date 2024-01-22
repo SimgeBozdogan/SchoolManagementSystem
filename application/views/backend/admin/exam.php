@@ -5,24 +5,25 @@
 		<ul class="nav nav-tabs bordered">
 			<li class="active">
             	<a href="#list" data-toggle="tab"><i class="entypo-menu"></i> 
-					<?php echo ('Exam List');?>
-                    	</a></li>
+					<?php echo ('Sınav Listesi');?>
+                </a></li>
 			<li>
             	<a href="#add" data-toggle="tab"><i class="entypo-plus-circled"></i>
-					<?php echo ('Add Exam');?>
-                    	</a></li>
+					<?php echo ('Sınav Ekle');?>
+                </a></li>
 		</ul>
     	<!------CONTROL TABS END------>
+        
 		<div class="tab-content">
             <!----TABLE LISTING STARTS-->
             <div class="tab-pane box active" id="list">
-                <table  class="table table-bordered table-hover table-striped datatable" id="table_export">
+                <table class="table table-bordered table-hover table-striped datatable" id="table_export">
                 	<thead>
                 		<tr>
-                    		<th><div><?php echo ('Exam Name');?></div></th>
-                    		<th><div><?php echo ('Date');?></div></th>
-                    		<th><div><?php echo ('Comment');?></div></th>
-                    		<th><div><?php echo ('Options');?></div></th>
+                    		<th><div><?php echo ('Sınav İsmi');?></div></th>
+                    		<th><div><?php echo ('Tarih');?></div></th>
+                    		<th><div><?php echo ('Açıklama');?></div></th>
+                    		<th><div><?php echo ('Seçenekler');?></div></th>
 						</tr>
 					</thead>
                     <tbody>
@@ -34,26 +35,25 @@
 							<td>
                             <div class="btn-group">
                                 <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">
-                                    Action <span class="caret"></span>
+                                    Değiştir <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu dropdown-default pull-right" role="menu">
-                                    
-                                    <!-- EDITING LINK -->
+                                    <!-- DÜZENLEME BAĞLANTISI -->
                                     <li>
                                         <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_edit_exam/<?php echo $row['exam_id'];?>');">
                                             <i class="entypo-pencil"></i>
-                                                <?php echo ('Edit');?>
-                                            </a>
-                                                    </li>
+                                            <?php echo ('Düzenle');?>
+                                        </a>
+                                    </li>
                                     <li class="divider"></li>
                                     
-                                    <!-- DELETION LINK -->
+                                    <!-- SİLME BAĞLANTISI -->
                                     <li>
                                         <a href="#" onclick="confirm_modal('<?php echo base_url();?>index.php?admin/exam/delete/<?php echo $row['exam_id'];?>');">
                                             <i class="entypo-trash"></i>
-                                                <?php echo ('Delete');?>
-                                            </a>
-                                                    </li>
+                                            <?php echo ('Sil');?>
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
         					</td>
@@ -62,60 +62,54 @@
                     </tbody>
                 </table>
 			</div>
-            <!----TABLE LISTING ENDS--->
+            <!----TABLO LİSTESİ BİTİŞ--->
             
             
-			<!----CREATION FORM STARTS---->
+			<!----OLUŞTURMA FORMU BAŞLANGICI---->
 			<div class="tab-pane box" id="add" style="padding: 5px">
                 <div class="box-content">
-                	<?php echo form_open(base_url() . 'index.php?admin/exam/create' , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
+                	<?php echo form_open(base_url() . 'index.php?admin/exam/create', array('class' => 'form-horizontal form-groups-bordered validate', 'target' => '_top'));?>
                         
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Name');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('İsim');?></label>
                                 <div class="col-sm-5">
-                                    <input type="text" class="form-control" name="name" data-validate="required" data-message-required="<?php echo ('Value Required');?>"/>
+                                    <input type="text" class="form-control" name="name" data-validate="required" data-message-required="<?php echo ('Değer Gerekli');?>"/>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Date');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Tarih');?></label>
                                 <div class="col-sm-5">
                                     <input type="text" class="datepicker form-control" name="date"/>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Comment');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Açıklama');?></label>
                                 <div class="col-sm-5">
                                     <input type="text" class="form-control" name="comment"/>
                                 </div>
                             </div>
-                        		<div class="form-group">
+                            <div class="form-group">
                               	<div class="col-sm-offset-3 col-sm-5">
-                                  <button type="submit" class="btn btn-info"><?php echo ('Add Exam');?></button>
+                                  <button type="submit" class="btn btn-info"><?php echo ('Sınav Ekle');?></button>
                               	</div>
-								</div>
+							</div>
                     </form>                
                 </div>                
 			</div>
-			<!----CREATION FORM ENDS-->
+			<!----OLUŞTURMA FORMU BİTİŞ-->
             
 		</div>
 	</div>
 </div>
 
-
-
-<!-----  DATA TABLE EXPORT CONFIGURATIONS ---->                      
+<!-----  TABLO VERİLERİNİ DIŞA AKTARMA YAPILANDIRMALARI ---->                      
 <script type="text/javascript">
-
 	jQuery(document).ready(function($)
 	{
-		
-
 		var datatable = $("#table_export").dataTable();
 		
 		$(".dataTables_wrapper select").select2({
 			minimumResultsForSearch: -1
 		});
 	});
-		
 </script>

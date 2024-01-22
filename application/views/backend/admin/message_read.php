@@ -8,7 +8,7 @@ foreach ($messages as $row):
     ?>
     <div class="mail-info">
 
-        <div class="mail-sender " style="padding:7px;">
+        <div class="mail-sender" style="padding:7px;">
 
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <img src="<?php echo $this->crud_model->get_image_url($sender_account_type, $sender_id); ?>" class="img-circle" width="30"> 
@@ -32,11 +32,11 @@ foreach ($messages as $row):
 <div class="mail-reply">
     <div class="compose-message-editor">
         <textarea row="5" class="form-control wysihtml5" data-stylesheet-url="assets/css/wysihtml5-color.css" name="message" 
-                  placeholder="<?php echo ('Reply Message'); ?>" id="sample_wysiwyg"></textarea>
+                  placeholder="<?php echo ('Yanıt Mesajı'); ?>" id="sample_wysiwyg"></textarea>
     </div>
     <br>
     <button type="submit" class="btn btn-success btn-icon pull-right">
-        <?php echo ('Send'); ?>
+        <?php echo ('Gönder'); ?>
         <i class="entypo-mail"></i>
     </button>
     <br><br>

@@ -40,7 +40,7 @@ class Admin extends CI_Controller
         if ($this->session->userdata('admin_login') != 1)
             redirect(base_url(), 'refresh');
         $page_data['page_name']  = 'dashboard';
-        $page_data['page_title'] = 'Admin Dashboard';
+        $page_data['page_title'] = 'Yönetici Gösterge Paneli';
         $this->load->view('backend/index', $page_data);
     }
     
@@ -52,7 +52,7 @@ class Admin extends CI_Controller
             redirect(base_url(), 'refresh');
 			
 		$page_data['page_name']  = 'student_add';
-		$page_data['page_title'] = 'Add Student';
+		$page_data['page_title'] = 'Öğrenci Ekle';
 		$this->load->view('backend/index', $page_data);
 	}
 	
@@ -95,7 +95,7 @@ class Admin extends CI_Controller
         }
         $page_data['acdSession']    = $this->db->get('acd_session')->result_array();
         $page_data['page_name']  = 'acd_session';
-		$page_data['page_title'] = 'Academic Session';
+		$page_data['page_title'] = 'Akademik Dönem';
         $this->load->view('backend/index', $page_data);
     }
 	 /****MANAGE ONLINE ADMISSION*****/
@@ -198,7 +198,7 @@ class Admin extends CI_Controller
 	
 		$page_data['osadStudent']    = $this->db->get('osad_student')->result_array();
         $page_data['page_name']  = 'online_admission';
-		$page_data['page_title'] = 'Online Admission';
+		$page_data['page_title'] = 'Online Kayıt';
         $this->load->view('backend/index', $page_data);
     }
 	
@@ -217,7 +217,7 @@ class Admin extends CI_Controller
                 'osad_student_id' => $param1
             ))->result_array();
         $page_data['page_name']  = 'online_admission';
-		$page_data['page_title'] = 'Online Admission';
+		$page_data['page_title'] = 'Online Kayıt';
         $this->load->view('backend/admin/onlineAdmissionRept', $page_data);
 		
 		//$this->load->helper(array('dompdf', 'file'));
@@ -268,7 +268,7 @@ class Admin extends CI_Controller
 			redirect(base_url() . 'index.php?admin/student_information/' . $this->input->post('class_id'), 'refresh');
 		}
 		$page_data['page_name']  = 'student_bulk_add';
-		$page_data['page_title'] = 'Add Bulk Student';
+		$page_data['page_title'] = 'Toplu Öğrenci Ekle';
 		$this->load->view('backend/index', $page_data);
 	}
 	
@@ -382,7 +382,7 @@ class Admin extends CI_Controller
             $this->session->set_flashdata('flash_message' , get_phrase('data_deleted'));
             redirect(base_url() . 'index.php?admin/parent/', 'refresh');
         }
-        $page_data['page_title'] 	= 'All Parents';
+        $page_data['page_title'] 	= 'Tüm Veriler';
         $page_data['page_name']  = 'parent';
         $this->load->view('backend/index', $page_data);
     }
@@ -437,7 +437,7 @@ class Admin extends CI_Controller
         }
         $page_data['teachers']   = $this->db->get('teacher')->result_array();
         $page_data['page_name']  = 'teacher';
-        $page_data['page_title'] = 'Manage Teacher';
+        $page_data['page_title'] = 'Öğretmenleri Yönet';
         $this->load->view('backend/index', $page_data);
     }
     
@@ -477,7 +477,7 @@ class Admin extends CI_Controller
 		 $page_data['class_id']   = $param1;
         $page_data['subjects']   = $this->db->get_where('subject' , array('class_id' => $param1))->result_array();
         $page_data['page_name']  = 'subject';
-        $page_data['page_title'] = 'Manage Subject';
+        $page_data['page_title'] = 'Dersleri Yönet';
         $this->load->view('backend/index', $page_data);
     }
     
@@ -516,7 +516,7 @@ class Admin extends CI_Controller
         }
         $page_data['classes']    = $this->db->get('class')->result_array();
         $page_data['page_name']  = 'class';
-        $page_data['page_title'] = 'Manage Class';
+        $page_data['page_title'] = 'Sınıfları Yönet';
         $this->load->view('backend/index', $page_data);
     }
 
@@ -530,7 +530,7 @@ class Admin extends CI_Controller
             $class_id           =   $this->db->get('class')->first_row()->class_id;
 
         $page_data['page_name']  = 'section';
-        $page_data['page_title'] = 'Manage Sections';
+        $page_data['page_title'] = 'Bölümleri Yönet';
         $page_data['class_id']   = $class_id;
         $this->load->view('backend/index', $page_data);    
     }
@@ -623,7 +623,7 @@ class Admin extends CI_Controller
         }
         $page_data['exams']      = $this->db->get('exam')->result_array();
         $page_data['page_name']  = 'exam';
-        $page_data['page_title'] = 'Manage Exam';
+        $page_data['page_title'] = 'Sınavları Yönet';
         $this->load->view('backend/index', $page_data);
     }
 
@@ -669,7 +669,7 @@ class Admin extends CI_Controller
         }
                 
         $page_data['page_name']  = 'exam_marks_sms';
-        $page_data['page_title'] = 'Send Marks by SMS';
+        $page_data['page_title'] = 'SMS ile Not Gönder';
         $this->load->view('backend/index', $page_data);
     }
 
@@ -707,7 +707,7 @@ class Admin extends CI_Controller
         $page_data['page_info'] = 'Exam marks';
         
         $page_data['page_name']  = 'marks';
-        $page_data['page_title'] = 'Manage Exam Marks';
+        $page_data['page_title'] = 'Sınav Notlarını Yönet';
         $this->load->view('backend/index', $page_data);
     }
     
@@ -751,7 +751,7 @@ class Admin extends CI_Controller
         }
         $page_data['grades']     = $this->db->get('grade')->result_array();
         $page_data['page_name']  = 'grade';
-        $page_data['page_title'] = 'Manage Grade';
+        $page_data['page_title'] = 'Notları Yönet';
         $this->load->view('backend/index', $page_data);
     }
     
@@ -793,7 +793,7 @@ class Admin extends CI_Controller
             redirect(base_url() . 'index.php?admin/class_routine/', 'refresh');
         }
         $page_data['page_name']  = 'class_routine';
-        $page_data['page_title'] = 'Manage Class Routine';
+        $page_data['page_title'] = 'Sınıf Programını Yönet';
         $this->load->view('backend/index', $page_data);
     }
 	
@@ -825,7 +825,7 @@ class Admin extends CI_Controller
         $page_data['class_id'] =	$class_id;
 		
         $page_data['page_name']  =	'manage_attendance';
-        $page_data['page_title'] =	'Manage Daily Attendance';
+        $page_data['page_title'] =	'Günlük Katılımı Yönet';
 		$this->load->view('backend/index', $page_data);
 	}
 	function attendance_selector()
@@ -913,7 +913,7 @@ class Admin extends CI_Controller
             redirect(base_url() . 'index.php?admin/invoice', 'refresh');
         }
         $page_data['page_name']  = 'invoice';
-        $page_data['page_title'] = 'Manage Invoice/Payment';
+        $page_data['page_title'] = 'Fatura/Ödeme Yönetimi';
         $this->db->order_by('creation_timestamp', 'desc');
         $page_data['invoices'] = $this->db->get('invoice')->result_array();
         $this->load->view('backend/index', $page_data);
@@ -925,7 +925,7 @@ class Admin extends CI_Controller
        if ($this->session->userdata('admin_login') != 1)
             redirect('login', 'refresh');
         $page_data['page_name']  = 'income';
-        $page_data['page_title'] = 'Incomes';
+        $page_data['page_title'] = 'Gelirler';
         $this->db->order_by('creation_timestamp', 'desc');
         $page_data['invoices'] = $this->db->get('invoice')->result_array();
         $this->load->view('backend/index', $page_data); 
@@ -970,7 +970,7 @@ class Admin extends CI_Controller
         }
 
         $page_data['page_name']  = 'expense';
-        $page_data['page_title'] = 'Expenses';
+        $page_data['page_title'] = 'Giderler';
         $this->load->view('backend/index', $page_data); 
     }
 
@@ -999,7 +999,7 @@ class Admin extends CI_Controller
         }
 
         $page_data['page_name']  = 'expense_category';
-        $page_data['page_title'] = 'Expense Category';
+        $page_data['page_title'] = 'Gider Kategorisi';
         $this->load->view('backend/index', $page_data);
     }
 
@@ -1044,7 +1044,7 @@ class Admin extends CI_Controller
         }
         $page_data['books']      = $this->db->get('book')->result_array();
         $page_data['page_name']  = 'book';
-        $page_data['page_title'] = 'Manage Library Books';
+        $page_data['page_title'] = 'Kütüphane Kitapları Yönetimi';
         $this->load->view('backend/index', $page_data);
         
     }
@@ -1085,7 +1085,7 @@ class Admin extends CI_Controller
         }
         $page_data['transports'] = $this->db->get('transport')->result_array();
         $page_data['page_name']  = 'transport';
-        $page_data['page_title'] = 'Manage Transport';
+        $page_data['page_title'] = 'Taşıma Yönetimi';
         $this->load->view('backend/index', $page_data);
         
     }
@@ -1124,7 +1124,7 @@ class Admin extends CI_Controller
         }
         $page_data['dormitories'] = $this->db->get('dormitory')->result_array();
         $page_data['page_name']   = 'dormitory';
-        $page_data['page_title']  = 'Manage Dormitory';
+        $page_data['page_title']  = 'Yurt Yönetimi';
         $this->load->view('backend/index', $page_data);
         
     }
@@ -1215,7 +1215,7 @@ class Admin extends CI_Controller
             redirect(base_url() . 'index.php?admin/noticeboard/', 'refresh');
         }
         $page_data['page_name']  = 'noticeboard';
-        $page_data['page_title'] = 'Manage Noticeboard';
+        $page_data['page_title'] = 'Duyuru Panosu Yönetimi';
         $page_data['notices']    = $this->db->get('noticeboard')->result_array();
         $this->load->view('backend/index', $page_data);
     }
@@ -1245,7 +1245,7 @@ class Admin extends CI_Controller
 
         $page_data['message_inner_page_name']   = $param1;
         $page_data['page_name']                 = 'message';
-        $page_data['page_title']                = 'Private Messaging';
+        $page_data['page_title']                = 'Özel Mesajlaşma';
         $this->load->view('backend/index', $page_data);
     }
     
@@ -1313,7 +1313,7 @@ class Admin extends CI_Controller
             redirect(base_url() . 'index.php?admin/system_settings/', 'refresh'); 
         }
         $page_data['page_name']  = 'system_settings';
-        $page_data['page_title'] = 'System Settings';
+        $page_data['page_title'] = 'Sistem Ayarları';
         $page_data['settings']   = $this->db->get('settings')->result_array();
         $this->load->view('backend/index', $page_data);
     }
@@ -1370,7 +1370,7 @@ class Admin extends CI_Controller
         }
 
         $page_data['page_name']  = 'sms_settings';
-        $page_data['page_title'] = 'SMS Settings';
+        $page_data['page_title'] = 'SMS Ayarları';
         $page_data['settings']   = $this->db->get('settings')->result_array();
         $this->load->view('backend/index', $page_data);
     }
@@ -1431,7 +1431,7 @@ class Admin extends CI_Controller
 			redirect(base_url() . 'index.php?admin/manage_language/', 'refresh');
 		}
 		$page_data['page_name']        = 'manage_language';
-		$page_data['page_title']       = 'Manage Language';
+		$page_data['page_title']       = 'Dil Yönetimi';
 		//$page_data['language_phrases'] = $this->db->get('language')->result_array();
 		$this->load->view('backend/index', $page_data);	
     }
@@ -1458,7 +1458,7 @@ class Admin extends CI_Controller
         
         $page_data['page_info']  = 'Create backup / restore from backup';
         $page_data['page_name']  = 'backup_restore';
-        $page_data['page_title'] = 'Manage Backup Restore';
+        $page_data['page_title'] = 'Yedekleme ve Geri Yükleme Yönetimi';
         $this->load->view('backend/index', $page_data);
     }
     
@@ -1497,7 +1497,7 @@ class Admin extends CI_Controller
             redirect(base_url() . 'index.php?admin/manage_profile/', 'refresh');
         }
         $page_data['page_name']  = 'manage_profile';
-        $page_data['page_title'] = 'Manage Profile';
+        $page_data['page_title'] = 'Profil Yönetimi';
         $page_data['edit_data']  = $this->db->get_where('admin', array(
             'admin_id' => $this->session->userdata('admin_id')
         ))->result_array();

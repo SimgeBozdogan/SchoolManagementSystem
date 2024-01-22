@@ -1,22 +1,22 @@
 <style>
     #chartdiv {
-	width       : 100%;
+        width       : 100%;
         height      : 250px;
         font-size   : 11px;
-}	
+    }	
 </style>
 
 <?php
 $student_info = $this->crud_model->get_student_info($param2);
 foreach ($student_info as $row1):
-    ?>
+?>
     <center>
         <div style="font-size: 20px;font-weight: 200;margin: 10px;"><?php echo $row1['name']; ?></div>
 
         <div class="panel-group joined" id="accordion-test-2">
 
             <?php
-            /////SEMESTER WISE RESULT, RESULTSHEET FOR EACH SEMESTER SEPERATELY
+            // HER DÖNEME AİT SONUÇLAR, HER BİR DÖNEM İÇİN AYRI SONUÇ TABLOSU
             $toggle = true;
             $exams = $this->crud_model->get_exams();
             foreach ($exams as $row0):
@@ -45,11 +45,11 @@ foreach ($student_info as $row1):
                                 <table class="table table-bordered table-hover table-striped " >
                                     <thead>
                                         <tr>
-                                            <th>Subject</th>
-                                            <th>Obtained marks</th>
-                                            <th>Highest mark</th>
-                                            <th>Grade</th>
-                                            <th>Comment</th>
+                                            <th>Ders</th>
+                                            <th>Alınan Notlar</th>
+                                            <th>En Yüksek Not</th>
+                                            <th>Not</th>
+                                            <th>Yorum</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -57,12 +57,12 @@ foreach ($student_info as $row1):
                                         $subjects = $this->crud_model->get_subjects_by_class($row1['class_id']);
                                         foreach ($subjects as $row2):
                                             $total_subjects++;
-                                            ?>
+                                        ?>
                                             <tr>
                                                 <td><?php echo $row2['name']; $subject_name[] = $row2['name']; ?></td>
                                                 <td>
                                                     <?php
-                                                    //obtained marks
+                                                    // Alınan notlar
                                                     $verify_data = array('exam_id' => $row0['exam_id'],
                                                         'class_id' => $row1['class_id'],
                                                         'subject_id' => $row2['subject_id'],
@@ -79,7 +79,7 @@ foreach ($student_info as $row1):
                                                 </td>
                                                 <td>
                                                     <?php
-                                                    //highest marks
+                                                    // En yüksek notlar
                                                     $verify_data = array('exam_id' => $row0['exam_id'],
                                                         'subject_id' => $row2['subject_id']);
                                                     $this->db->select_max('mark_obtained', 'mark_highest');
@@ -104,9 +104,9 @@ foreach ($student_info as $row1):
                                     </tbody>
                                 </table>
                                 <hr />
-                                Total Marks : <?php echo $total_marks; ?>
+                                Toplam Not : <?php echo $total_marks; ?>
                                 <hr />
-                                GPA(grade point average) : <?php echo round($total_grade_point / $total_subjects, 2); ?>
+                                GPA (not ortalaması) : <?php echo round($total_grade_point / $total_subjects, 2); ?>
                                 <div id="chartdiv"></div>
                                 <script>
                                     setTimeout(function() {
@@ -126,24 +126,24 @@ foreach ($student_info as $row1):
                                                 "stackType": "3d",
                                                 "unit": "%",
                                                 "position": "left",
-                                                "title": "Obtained Mark vs Highest Mark"
+                                                "title": "Alınan Not vs En Yüksek Not"
                                             }],
                                             "startDuration": 1,
                                             "graphs": [{
-                                                "balloonText": "Obtained Mark in [[category]]: <b>[[value]]</b>",
+                                                "balloonText": "[[category]] Dersinde Alınan Not: <b>[[value]]</b>",
                                                 "fillAlphas": 0.9,
                                                 "lineAlpha": 0.2,
                                                 "title": "2004",
                                                 "type": "column",
-                                                "fillColors":"#7f8c8d",
+                                                "fillColors": "#7f8c8d",
                                                 "valueField": "mark_obtained"
                                             }, {
-                                                "balloonText": "Highest Mark in [[category]]: <b>[[value]]</b>",
+                                                "balloonText": "[[category]] Dersinde En Yüksek Not: <b>[[value]]</b>",
                                                 "fillAlphas": 0.9,
                                                 "lineAlpha": 0.2,
                                                 "title": "2005",
                                                 "type": "column",
-                                                "fillColors":"#34495e",
+                                                "fillColors": "#34495e",
                                                 "valueField": "mark_highest"
                                             }],
                                             "plotAreaFillAlphas": 0.1,
@@ -154,8 +154,8 @@ foreach ($student_info as $row1):
                                                 "gridPosition": "start"
                                             },
                                             "exportConfig":{
-                                                "menuTop":"20px",
-                                                "menuRight":"20px",
+                                                "menuTop": "20px",
+                                                "menuRight": "20px",
                                                 "menuItems": [{
                                                     "format": 'png'	  
                                                 }]  

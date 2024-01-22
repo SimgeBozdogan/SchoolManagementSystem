@@ -1,13 +1,13 @@
 <div class="row">
 	<div class="col-md-8">
     	<div class="row">
-            <!-- CALENDAR-->
+            <!-- TAKVİM-->
             <div class="col-md-12 col-xs-12">    
                 <div class="panel panel-primary " data-collapsed="0">
                     <div class="panel-heading">
                         <div class="panel-title">
                             <i class="fa fa-calendar"></i>
-                            <?php echo ('Event Schedule');?>
+                            <?php echo ('Etkinlik Takvimi');?>
                         </div>
                     </div>
                     <div class="panel-body" style="padding:0px;">
@@ -31,8 +31,8 @@
                     <div class="num" data-start="0" data-end="<?php echo $this->db->count_all('student');?>" 
                     		data-postfix="" data-duration="1500" data-delay="0">0</div>
                     
-                    <h3><?php echo ('Student');?></h3>
-                   <p>Total students</p>
+                    <h3><?php echo ('Öğrenci');?></h3>
+                   <p>Toplam öğrenci sayısı</p>
                 </div>
                 
             </div>
@@ -43,8 +43,8 @@
                     <div class="num" data-start="0" data-end="<?php echo $this->db->count_all('teacher');?>" 
                     		data-postfix="" data-duration="800" data-delay="0">0</div>
                     
-                    <h3><?php echo ('Teacher');?></h3>
-                   <p>Total teachers</p>
+                    <h3><?php echo ('Öğretmen');?></h3>
+                   <p>Toplam öğretmen sayısı</p>
                 </div>
                 
             </div>
@@ -55,8 +55,8 @@
                     <div class="num" data-start="0" data-end="<?php echo $this->db->count_all('parent');?>" 
                     		data-postfix="" data-duration="500" data-delay="0">0</div>
                     
-                    <h3><?php echo ('Parent');?></h3>
-                   <p>Total parents</p>
+                    <h3><?php echo ('Veli');?></h3>
+                   <p>Toplam veli sayısı</p>
                 </div>
                 
             </div>
@@ -72,8 +72,8 @@
                     <div class="num" data-start="0" data-end="<?php echo $present_today;?>" 
                     		data-postfix="" data-duration="500" data-delay="0">0</div>
                     
-                    <h3><?php echo ('Attendance');?></h3>
-                   <p>Total present student today</p>
+                    <h3><?php echo ('Katılım');?></h3>
+                   <p>Bugün toplam katılım gösteren öğrenci sayısı</p>
                 </div>
                 
             </div>
@@ -82,9 +82,7 @@
 	
 </div>
 
-
-
-    <script>
+<script>
   $(document).ready(function() {
 	  
 	  var calendar = $('#notice_calendar');
@@ -119,6 +117,4 @@
 					]
 				});
 	});
-  </script>
-
-  
+</script>

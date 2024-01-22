@@ -1,25 +1,25 @@
 <hr />
 <div class="mail-env">
 
-    <!-- Mail Body -->
+    <!-- Posta Gövdesi -->
     <div class="mail-body">
 
-        <!-- message page body -->
+        <!-- Mesaj sayfası içeriği -->
         <?php include $message_inner_page_name . '.php'; ?>
     </div>
 
-    <!-- Sidebar -->
+    <!-- Yan Menü -->
     <div class="mail-sidebar" style="min-height: 800px;">
 
-        <!-- compose new email button -->
+        <!-- Yeni e-posta oluşturma düğmesi -->
         <div class="mail-sidebar-row hidden-xs">
             <a href="<?php echo base_url(); ?>index.php?admin/message/message_new" class="btn btn-success btn-icon btn-block">
-                <?php echo ('New Message'); ?>
+                <?php echo ('Yeni Mesaj'); ?>
                 <i class="entypo-pencil"></i>
             </a>
         </div>
 
-        <!-- message user inbox list -->
+        <!-- Kullanıcı posta gelen kutusu listesi -->
         <ul class="mail-menu">
 
             <?php
@@ -30,7 +30,7 @@
             $message_threads = $this->db->get('message_thread')->result_array();
             foreach ($message_threads as $row):
 
-                // defining the user to show
+                // Gösterilecek kullanıcıyı tanımlama
                 if ($row['sender'] == $current_user)
                     $user_to_show = explode('-', $row['reciever']);
                 if ($row['reciever'] == $current_user)

@@ -6,7 +6,7 @@
 
 			<li class="active">
             	<a href="#list" data-toggle="tab"><i class="entypo-user"></i> 
-					<?php echo ('Manage Profile');?>
+					<?php echo ('Profili Yönet');?>
                     	</a></li>
 		</ul>
     	<!------CONTROL TABS END------->

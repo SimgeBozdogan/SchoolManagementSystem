@@ -1,24 +1,24 @@
 <div class="row">
 	<div class="col-md-12">
     
-    	<!------CONTROL TABS START------>
+    	<!------KONTROL SEKMELEME BAŞLANGICI------>
 		<ul class="nav nav-tabs bordered">
 			<li class="active">
             	<a href="#list" data-toggle="tab"><i class="entypo-menu"></i> 
-					<?php echo ('Subject List');?>
+					<?php echo ('Ders Listesi');?>
                     	</a></li>
 		</ul>
-    	<!------CONTROL TABS END------>
+    	<!------KONTROL SEKMELEME SONU------>
 		<div class="tab-content">            
-            <!----TABLE LISTING STARTS-->
+            <!----TABLO LİSTESİ BAŞLANGICI-->
             <div class="tab-pane box active" id="list">
 				
                 <table class="table table-bordered table-hover table-striped datatable" id="table_export">
                 	<thead>
                 		<tr>
-                    		<th><div><?php echo ('Class');?></div></th>
-                    		<th><div><?php echo ('Subject Name');?></div></th>
-                    		<th><div><?php echo ('Teacher');?></div></th>
+                    		<th><div><?php echo ('Sınıf');?></div></th>
+                    		<th><div><?php echo ('Ders Adı');?></div></th>
+                    		<th><div><?php echo ('Öğretmen');?></div></th>
 						</tr>
 					</thead>
                     <tbody>
@@ -33,23 +33,17 @@
                     </tbody>
                 </table>
 			</div>
-            <!----TABLE LISTING ENDS-->
-            
-            
-			
-            
+            <!----TABLO LİSTESİ SONU-->
 		</div>
 	</div>
 </div>
 
 
-<!-----  DATA TABLE EXPORT CONFIGURATIONS ---->                      
+<!-----  VERİ TABLOSU DIŞA AKTARMA YAPILANDIRMALARI ---->                      
 <script type="text/javascript">
 
 	jQuery(document).ready(function($)
 	{
-		
-
 		var datatable = $("#table_export").dataTable();
 		
 		$(".dataTables_wrapper select").select2({

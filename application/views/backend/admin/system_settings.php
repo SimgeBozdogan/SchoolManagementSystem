@@ -1,138 +1,127 @@
 <hr />
 
-    <div class="row">
+<div class="row">
     <?php echo form_open(base_url() . 'index.php?admin/system_settings/do_update' , 
       array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
-        <div class="col-md-6">
-            
-            <div class="panel panel-primary" >
-            
-                <div class="panel-heading">
-                    <div class="panel-title">
-                        <?php echo ('System Settings');?>
-                    </div>
-                </div>
-                
-                <div class="panel-body">
-                    
-                  <div class="form-group">
-                      <label  class="col-sm-3 control-label"><?php echo ('System Name');?></label>
-                      <div class="col-sm-9">
-                          <input type="text" class="form-control" name="system_name" 
-                              value="<?php echo $this->db->get_where('settings' , array('type' =>'system_name'))->row()->description;?>">
-                      </div>
-                  </div>
-                    
-                  <div class="form-group">
-                      <label  class="col-sm-3 control-label"><?php echo ('System Title');?></label>
-                      <div class="col-sm-9">
-                          <input type="text" class="form-control" name="system_title" 
-                              value="<?php echo $this->db->get_where('settings' , array('type' =>'system_title'))->row()->description;?>">
-                      </div>
-                  </div>
-                    
-                  <div class="form-group">
-                      <label  class="col-sm-3 control-label"><?php echo ('Address');?></label>
-                      <div class="col-sm-9">
-                          <input type="text" class="form-control" name="address" 
-                              value="<?php echo $this->db->get_where('settings' , array('type' =>'address'))->row()->description;?>">
-                      </div>
-                  </div>
-                    
-                  <div class="form-group">
-                      <label  class="col-sm-3 control-label"><?php echo ('Phone');?></label>
-                      <div class="col-sm-9">
-                          <input type="text" class="form-control" name="phone" 
-                              value="<?php echo $this->db->get_where('settings' , array('type' =>'phone'))->row()->description;?>">
-                      </div>
-                  </div>
-                    
-                  <div class="form-group">
-                      <label  class="col-sm-3 control-label"><?php echo ('Paypal email');?></label>
-                      <div class="col-sm-9">
-                          <input type="text" class="form-control" name="paypal_email" 
-                              value="<?php echo $this->db->get_where('settings' , array('type' =>'paypal_email'))->row()->description;?>">
-                      </div>
-                  </div>
-                    
-                  <div class="form-group">
-                      <label  class="col-sm-3 control-label"><?php echo ('Currency');?></label>
-                      <div class="col-sm-9">
-                          <input type="text" class="form-control" name="currency" 
-                              value="<?php echo $this->db->get_where('settings' , array('type' =>'currency'))->row()->description;?>">
-                      </div>
-                  </div>
-                    
-                  <div class="form-group">
-                      <label  class="col-sm-3 control-label"><?php echo ('System Email');?></label>
-                      <div class="col-sm-9">
-                          <input type="text" class="form-control" name="system_email" 
-                              value="<?php echo $this->db->get_where('settings' , array('type' =>'system_email'))->row()->description;?>">
-                      </div>
-                  </div>
-                    
-                  <div class="form-group">
-                      <label  class="col-sm-3 control-label"><?php echo ('Language');?></label>
-                      <div class="col-sm-9">
-                          <select name="language" class="form-control">
-                                <?php
-									$fields = $this->db->list_fields('language');
-									foreach ($fields as $field)
-									{
-										if ($field == 'phrase_id' || $field == 'phrase')continue;
-										
-										$current_default_language	=	$this->db->get_where('settings' , array('type'=>'language'))->row()->description;
-										?>
-                                		<option value="<?php echo $field;?>"
-                                        	<?php if ($current_default_language == $field)echo 'selected';?>> <?php echo $field;?> </option>
-                                        <?php
-									}
-									?>
-                           </select>
-                      </div>
-                  </div>
-                    
-                  <div class="form-group">
-                      <label  class="col-sm-3 control-label"><?php echo ('Text align');?></label>
-                      <div class="col-sm-9">
-                          <select name="text_align" class="form-control">
-                          	  <?php $text_align	=	$this->db->get_where('settings' , array('type'=>'text_align'))->row()->description;?>
-                              <option value="left-to-right" <?php if ($text_align == 'left-to-right')echo 'selected';?>> left-to-right</option>
-                              <option value="right-to-left" <?php if ($text_align == 'right-to-left')echo 'selected';?>> right-to-left</option>
-                          </select>
-                      </div>
-                  </div>
-                  
-                  <div class="form-group">
-                    <div class="col-sm-offset-3 col-sm-9">
-                        <button type="submit" class="btn btn-info"><?php echo ('Save');?></button>
-                    </div>
-                  </div>
-                    
-                </div>
-            
-            </div>
-        
-        </div>
-    <?php echo form_close();?>
+    <div class="col-md-6">
 
-      <?php 
-        $skin = $this->db->get_where('settings' , array(
-          'type' => 'skin_colour'
-        ))->row()->description;
-      ?>
-    
-        <div class="col-md-6">
-            
-            <div class="panel panel-primary" >
-            
-                <div class="panel-heading">
-                    <div class="panel-title">
-                        <?php echo ('Theme Settings');?>
+        <div class="panel panel-primary" >
+
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <?php echo ('Sistem Ayarları'); ?>
+                </div>
+            </div>
+
+            <div class="panel-body">
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"><?php echo ('Sistem Adı'); ?></label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="system_name" value="<?php echo $this->db->get_where('settings', array('type' => 'system_name'))->row()->description; ?>">
                     </div>
                 </div>
-                
-                <div class="panel-body">
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"><?php echo ('Sistem Başlığı'); ?></label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="system_title" value="<?php echo $this->db->get_where('settings', array('type' => 'system_title'))->row()->description; ?>">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"><?php echo ('Adres'); ?></label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="address" value="<?php echo $this->db->get_where('settings', array('type' => 'address'))->row()->description; ?>">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"><?php echo ('Telefon'); ?></label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="phone" value="<?php echo $this->db->get_where('settings', array('type' => 'phone'))->row()->description; ?>">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"><?php echo ('Paypal E-posta'); ?></label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="paypal_email" value="<?php echo $this->db->get_where('settings', array('type' => 'paypal_email'))->row()->description; ?>">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"><?php echo ('Para Birimi'); ?></label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="currency" value="<?php echo $this->db->get_where('settings', array('type' => 'currency'))->row()->description; ?>">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"><?php echo ('Sistem E-posta'); ?></label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="system_email" value="<?php echo $this->db->get_where('settings', array('type' => 'system_email'))->row()->description; ?>">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"><?php echo ('Dil'); ?></label>
+                    <div class="col-sm-9">
+                        <select name="language" class="form-control">
+                            <?php
+                            $fields = $this->db->list_fields('language');
+                            foreach ($fields as $field) {
+                                if ($field == 'phrase_id' || $field == 'phrase') continue;
+
+                                $current_default_language = $this->db->get_where('settings', array('type' => 'language'))->row()->description;
+                            ?>
+                                <option value="<?php echo $field; ?>" <?php if ($current_default_language == $field) echo 'selected'; ?>><?php echo $field; ?> </option>
+                            <?php
+                            }
+                            ?>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"><?php echo ('Metin Hizalama'); ?></label>
+                    <div class="col-sm-9">
+                        <select name="text_align" class="form-control">
+                            <?php $text_align = $this->db->get_where('settings', array('type' => 'text_align'))->row()->description; ?>
+                            <option value="left-to-right" <?php if ($text_align == 'left-to-right') echo 'selected'; ?>>left-to-right</option>
+                            <option value="right-to-left" <?php if ($text_align == 'right-to-left') echo 'selected'; ?>>right-to-left</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-9">
+                        <button type="submit" class="btn btn-info"><?php echo ('Kaydet'); ?></button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <?php echo form_close(); ?>
+
+    <?php
+    $skin = $this->db->get_where('settings', array('type' => 'skin_colour'))->row()->description;
+    ?>
+
+    <div class="col-md-6">
+
+        <div class="panel panel-primary" >
+
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <?php echo ('Tema Ayarları'); ?>
+                </div>
+            </div>
+
+            <div class="panel-body">
 
                 <div class="gallery-env">
 
@@ -145,7 +134,7 @@
                                 </a>
                                 <a href="#" class="album-options" id="default">
                                     <i class="entypo-check"></i>
-                                    <?php echo ('Default');?>
+                                    <?php echo ('Varsayılan'); ?>
                                 </a>
                             </header>
                         </article>
@@ -160,7 +149,7 @@
                                 </a>
                                 <a href="#" class="album-options" id="black">
                                     <i class="entypo-check"></i>
-                                    <?php echo ('Select Theme');?>
+                                    <?php echo ('Tema Seç'); ?>
                                 </a>
                             </header>
                         </article>
@@ -174,7 +163,7 @@
                                 </a>
                                 <a href="#" class="album-options" id="blue">
                                     <i class="entypo-check"></i>
-                                    <?php echo ('Select Theme');?>
+                                    <?php echo ('Tema Seç'); ?>
                                 </a>
                             </header>
                         </article>
@@ -188,7 +177,7 @@
                                 </a>
                                 <a href="#" class="album-options" id="cafe">
                                     <i class="entypo-check"></i>
-                                    <?php echo ('Select Theme');?>
+                                    <?php echo ('Tema Seç'); ?>
                                 </a>
                             </header>
                         </article>
@@ -202,7 +191,7 @@
                                 </a>
                                 <a href="#" class="album-options" id="green">
                                     <i class="entypo-check"></i>
-                                    <?php echo ('Select Theme');?>
+                                    <?php echo ('Tema Seç'); ?>
                                 </a>
                             </header>
                         </article>
@@ -216,7 +205,7 @@
                                 </a>
                                 <a href="#" class="album-options" id="purple">
                                     <i class="entypo-check"></i>
-                                    <?php echo ('Select Theme');?>
+                                    <?php echo ('Tema Seç'); ?>
                                 </a>
                             </header>
                         </article>
@@ -230,7 +219,7 @@
                                 </a>
                                 <a href="#" class="album-options" id="red">
                                     <i class="entypo-check"></i>
-                                    <?php echo ('Select Theme');?>
+                                    <?php echo ('Tema Seç'); ?>
                                 </a>
                             </header>
                         </article>
@@ -244,88 +233,84 @@
                                 </a>
                                 <a href="#" class="album-options" id="white">
                                     <i class="entypo-check"></i>
-                                    <?php echo ('Select Theme');?>
+                                    <?php echo ('Tema Seç'); ?>
                                 </a>
                             </header>
                         </article>
                     </div>
                     <div class="col-sm-4">
-                        <article class="album">
-                            <header>
-                                <a href="#" id="yellow">
-                                    <img src="assets/images/skins/yellow.png"
-                                    <?php if ($skin == 'yellow') echo 'style="background-color: black; opacity: 0.3;"';?> />
-                                </a>
-                                <a href="#" class="album-options" id="yellow">
-                                    <i class="entypo-check"></i>
-                                    <?php echo ('Select Theme');?>
-                                </a>
-                            </header>
-                        </article>
-                    </div>
+    <article class="album">
+        <header>
+            <a href="#" id="yellow">
+                <img src="assets/images/skins/yellow.png"
+                    <?php if ($skin == 'yellow') echo 'style="background-color: black; opacity: 0.3;"';?> />
+            </a>
+            <a href="#" class="album-options" id="yellow">
+                <i class="entypo-check"></i>
+                <?php echo ('Tema Seç');?>
+            </a>
+        </header>
+    </article>
+</div>
+</div>
+<center>
+    <div class="label label-primary" style="font-size: 12px;">
+        <i class="entypo-check"></i> <?php echo ('Değişiklik yapmak için bir tema seçin');?>
+    </div>
+</center>
+</div>
+</div>
 
+<?php echo form_open(base_url() . 'index.php?admin/system_settings/upload_logo' , array(
+    'class' => 'form-horizontal form-groups-bordered validate','target'=>'_top' , 'enctype' => 'multipart/form-data'));?>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <div class="panel-title">
+            <?php echo ('Logo Yükle'); ?>
+        </div>
+    </div>
+
+    <div class="panel-body">
+        <div class="form-group">
+            <label for="field-1" class="col-sm-3 control-label"><?php echo ('Fotoğraf'); ?></label>
+
+            <div class="col-sm-9">
+                <div class="fileinput fileinput-new" data-provides="fileinput">
+                    <div class="fileinput-new thumbnail" style="width: 100px; height: 100px;" data-trigger="fileinput">
+                        <img src="<?php echo base_url();?>uploads/logo.png" alt="...">
+                    </div>
+                    <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px"></div>
+                    <div>
+                        <span class="btn btn-white btn-file">
+                            <span class="fileinput-new">Resim Seç</span>
+                            <span class="fileinput-exists">Değiştir</span>
+                            <input type="file" name="userfile" accept="image/*">
+                        </span>
+                        <a href="#" class="btn btn-orange fileinput-exists" data-dismiss="fileinput">Kaldır</a>
+                    </div>
                 </div>
-                <center>
-                  <div class="label label-primary" style="font-size: 12px;">
-                    <i class="entypo-check"></i> <?php echo ('Select a theme to make changes');?>
-                  </div>
-                </center>
-                </div>
-            
             </div>
+        </div>
 
-            <?php echo form_open(base_url() . 'index.php?admin/system_settings/upload_logo' , array(
-            'class' => 'form-horizontal form-groups-bordered validate','target'=>'_top' , 'enctype' => 'multipart/form-data'));?>
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">
+                <button type="submit" class="btn btn-info"><?php echo ('Yükle'); ?></button>
+            </div>
+        </div>
+    </div>
+</div>
 
-              <div class="panel panel-primary" >
+</div>
               
-                  <div class="panel-heading">
-                      <div class="panel-title">
-                          <?php echo ('Upload logo');?>
-                      </div>
-                  </div>
-                  
-                  <div class="panel-body">
-                      
-                    
-                      <div class="form-group">
-                          <label for="field-1" class="col-sm-3 control-label"><?php echo ('Photo');?></label>
-                          
-                          <div class="col-sm-9">
-                              <div class="fileinput fileinput-new" data-provides="fileinput">
-                                  <div class="fileinput-new thumbnail" style="width: 100px; height: 100px;" data-trigger="fileinput">
-                                      <img src="<?php echo base_url();?>uploads/logo.png" alt="...">
-                                  </div>
-                                  <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px"></div>
-                                  <div>
-                                      <span class="btn btn-white btn-file">
-                                          <span class="fileinput-new">Select image</span>
-                                          <span class="fileinput-exists">Change</span>
-                                          <input type="file" name="userfile" accept="image/*">
-                                      </span>
-                                      <a href="#" class="btn btn-orange fileinput-exists" data-dismiss="fileinput">Remove</a>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                    
-                    
-                    <div class="form-group">
-                      <div class="col-sm-offset-3 col-sm-9">
-                          <button type="submit" class="btn btn-info"><?php echo ('Upload');?></button>
-                      </div>
-                    </div>
-                      
-                  </div>
-              
-              </div>
+</div>
 
             <?php echo form_close();?>
             
         
         </div>
 
-    </div>
+</div>
 
 <script type="text/javascript">
     $(".gallery-env").on('click', 'a', function () {
@@ -334,5 +319,5 @@
             url: '<?php echo base_url();?>index.php?admin/system_settings/change_skin/'+ skin,
             success: window.location = '<?php echo base_url();?>index.php?admin/system_settings/'
         });
-});
+    });
 </script>

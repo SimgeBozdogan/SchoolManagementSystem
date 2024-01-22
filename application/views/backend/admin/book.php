@@ -1,35 +1,37 @@
 <div class="row">
 	<div class="col-md-12">
     
-    	<!------CONTROL TABS START------>
+    	<!-- KONTROL SEKMELEME BAŞLANGICI -->
 		<ul class="nav nav-tabs bordered">
 			<li class="active">
             	<a href="#list" data-toggle="tab"><i class="entypo-menu"></i> 
-					<?php echo ('Book List');?>
-                    	</a></li>
+					<?php echo ('Kitap Listesi');?>
+                </a>
+            </li>
 			<li>
             	<a href="#add" data-toggle="tab"><i class="entypo-plus-circled"></i>
-					<?php echo ('Add Book');?>
-                    	</a></li>
+					<?php echo ('Kitap Ekle');?>
+                </a>
+            </li>
 		</ul>
-    	<!------CONTROL TABS END------>
+    	<!-- KONTROL SEKMELEME SONU -->
         
 	
 		<div class="tab-content">
-            <!----TABLE LISTING STARTS-->
+            <!-- TABLO LİSTESİ BAŞLANGICI -->
             <div class="tab-pane box active" id="list">
 					
                 <table cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-hover table-striped datatable" id="table_export">
                 	<thead>
                 		<tr>
                     		<th><div>#</div></th>
-                    		<th><div><?php echo ('Book Name');?></div></th>
-                    		<th><div><?php echo ('Author');?></div></th>
-                    		<th><div><?php echo ('Description');?></div></th>
-                    		<th><div><?php echo ('Price');?></div></th>
-                    		<th><div><?php echo ('Class');?></div></th>
-                    		<th><div><?php echo ('Status');?></div></th>
-                    		<th><div><?php echo ('Options');?></div></th>
+                    		<th><div><?php echo ('Kitap Adı');?></div></th>
+                    		<th><div><?php echo ('Yazar');?></div></th>
+                    		<th><div><?php echo ('Açıklama');?></div></th>
+                    		<th><div><?php echo ('Fiyat');?></div></th>
+                    		<th><div><?php echo ('Sınıf');?></div></th>
+                    		<th><div><?php echo ('Durum');?></div></th>
+                    		<th><div><?php echo ('Seçenekler');?></div></th>
 						</tr>
 					</thead>
                     <tbody>
@@ -41,72 +43,74 @@
 							<td><?php echo $row['description'];?></td>
 							<td><?php echo $row['price'];?></td>
 							<td><?php echo $this->crud_model->get_type_name_by_id('class',$row['class_id']);?></td>
-							<td><span class="label label-<?php if($row['status']=='available')echo 'success';else echo 'secondary';?>"><?php echo $row['status'];?></span></td>
+							<td><span class="label label-<?php echo ($row['status']=='available') ? 'success' : 'secondary';?>">
+								<?php echo $row['status'];?>
+								</span>
+							</td>
 							<td>
                             <div class="btn-group">
                                 <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">
-                                    Action <span class="caret"></span>
+                                    Değiştir <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu dropdown-default pull-right" role="menu">
                                     
-                                    <!-- EDITING LINK -->
+                                    <!-- DÜZENLEME BAĞLANTISI -->
                                     <li>
                                         <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_edit_book/<?php echo $row['book_id'];?>');">
                                             <i class="entypo-pencil"></i>
-                                                <?php echo ('Edit');?>
-                                            </a>
-                                                    </li>
+                                            <?php echo ('Düzenle');?>
+                                        </a>
+                                    </li>
                                     <li class="divider"></li>
                                     
-                                    <!-- DELETION LINK -->
+                                    <!-- SİLME BAĞLANTISI -->
                                     <li>
                                         <a href="#" onclick="confirm_modal('<?php echo base_url();?>index.php?admin/book/delete/<?php echo $row['book_id'];?>');">
                                             <i class="entypo-trash"></i>
-                                                <?php echo ('Delete');?>
-                                            </a>
-                                                    </li>
+                                            <?php echo ('Sil');?>
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
-                            
         					</td>
                         </tr>
                         <?php endforeach;?>
                     </tbody>
                 </table>
 			</div>
-            <!----TABLE LISTING ENDS--->
+            <!-- TABLO LİSTESİ SONU -->
             
             
-			<!----CREATION FORM STARTS---->
+			<!-- OLUŞTURMA FORMU BAŞLANGICI -->
 			<div class="tab-pane box" id="add" style="padding: 5px">
                 <div class="box-content">
                 	<?php echo form_open(base_url() . 'index.php?admin/book/create' , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Name');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Ad');?></label>
                                 <div class="col-sm-5">
                                     <input type="text" class="form-control" name="name"/>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Author');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Yazar');?></label>
                                 <div class="col-sm-5">
                                     <input type="text" class="form-control" name="author"/>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Description');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Açıklama');?></label>
                                 <div class="col-sm-5">
                                     <input type="text" class="form-control" name="description"/>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Price');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Fiyat');?></label>
                                 <div class="col-sm-5">
                                     <input type="text" class="form-control" name="price"/>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Class');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Sınıf');?></label>
                                 <div class="col-sm-5">
                                     <select name="class_id" class="form-control" style="width:100%;">
                                     	<?php 
@@ -121,23 +125,23 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-3 control-label"><?php echo ('Status');?></label>
+                                <label class="col-sm-3 control-label"><?php echo ('Durum');?></label>
                                 <div class="col-sm-5">
                                     <select name="status" class="form-control" style="width:100%;">
-                                    	<option value="available"><?php echo ('Available');?></option>
-                                    	<option value="unavailable"><?php echo ('unavailable');?></option>
+                                    	<option value="available"><?php echo ('Mevcut');?></option>
+                                    	<option value="unavailable"><?php echo ('Mevcut Değil');?></option>
                                     </select>
                                 </div>
                             </div>
-                        		<div class="form-group">
+                        	<div class="form-group">
                               <div class="col-sm-offset-3 col-sm-5">
-                                  <button type="submit" class="btn btn-info"><?php echo ('Add Book');?></button>
+                                  <button type="submit" class="btn btn-info"><?php echo ('Kitap Ekle');?></button>
                               </div>
-								</div>
+							</div>
                     </form>                
                 </div>                
 			</div>
-			<!----CREATION FORM ENDS--->
+			<!-- OLUŞTURMA FORMU SONU -->
             
 		</div>
 	</div>

@@ -1,7 +1,7 @@
-<div class="mail-header" style="padding-bottom: 27px ;">
-    <!-- title -->
+<div class="mail-header" style="padding-bottom: 27px;">
+    <!-- başlık -->
     <h3 class="mail-title">
-        <?php echo ('Write New Message'); ?>
+        <?php echo ('Yeni Mesaj Yaz'); ?>
     </h3>
 </div>
 
@@ -11,12 +11,12 @@
 
 
     <div class="form-group">
-        <label for="subject"><?php echo ('Recipient'); ?>:</label>
+        <label for="subject"><?php echo ('Alıcı'); ?>:</label>
         <br><br>
         <select class="form-control select2" name="reciever" required>
 
-            <option value=""><?php echo ('Select a user'); ?></option>
-            <optgroup label="<?php echo ('Admin'); ?>">
+            <option value=""><?php echo ('Bir kullanıcı seçin'); ?></option>
+            <optgroup label="<?php echo ('Yönetici'); ?>">
                 <?php
                 $admins = $this->db->get('admin')->result_array();
                 foreach ($admins as $row):
@@ -27,7 +27,7 @@
 
                 <?php endforeach; ?>
             </optgroup>
-            <optgroup label="<?php echo ('Teacher'); ?>">
+            <optgroup label="<?php echo ('Öğretmen'); ?>">
                 <?php
                 $teachers = $this->db->get('teacher')->result_array();
                 foreach ($teachers as $row):
@@ -44,14 +44,14 @@
 
     <div class="compose-message-editor">
         <textarea row="5" class="form-control wysihtml5" data-stylesheet-url="assets/css/wysihtml5-color.css" 
-            name="message" placeholder="<?php echo ('Write your message'); ?>" 
+            name="message" placeholder="<?php echo ('Mesajınızı yazın'); ?>" 
             id="sample_wysiwyg"></textarea>
     </div>
 
     <hr>
 
     <button type="submit" class="btn btn-success btn-icon pull-right">
-        <?php echo ('Send'); ?>
+        <?php echo ('Gönder'); ?>
         <i class="entypo-mail"></i>
 
     </button>

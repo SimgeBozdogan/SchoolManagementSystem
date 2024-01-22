@@ -8,7 +8,7 @@ foreach ( $edit_data as $row):
         	<div class="panel-heading">
             	<div class="panel-title" >
             		<i class="entypo-plus-circled"></i>
-					<?php echo ('Edit Student');?>
+					<?php echo ('Öğrenciyi Düzenle');?>
             	</div>
             </div>
 			<div class="panel-body">
@@ -16,38 +16,38 @@ foreach ( $edit_data as $row):
                 <?php echo form_open(base_url() . 'index.php?admin/grade/do_update/'.$row['grade_id'] , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
             <div class="padded">
                 <div class="form-group">
-                    <label class="col-sm-3 control-label"><?php echo ('Name');?></label>
+                    <label class="col-sm-3 control-label"><?php echo ('Ad');?></label>
                     <div class="col-sm-5 controls">
                         <input type="text" class="form-control" name="name" value="<?php echo $row['name'];?>"/>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label"><?php echo ('Grade Point');?></label>
+                    <label class="col-sm-3 control-label"><?php echo ('Not Değeri');?></label>
                     <div class="col-sm-5 controls">
                         <input type="text" class="form-control" name="grade_point" value="<?php echo $row['grade_point'];?>"/>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label"><?php echo ('Mark From');?></label>
+                    <label class="col-sm-3 control-label"><?php echo ('Başlangıç');?></label>
                     <div class="col-sm-5 controls">
                         <input type="text" class="form-control" name="mark_from" value="<?php echo $row['mark_from'];?>"/>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label"><?php echo ('Mark Upto');?></label>
+                    <label class="col-sm-3 control-label"><?php echo ('Bitiş');?></label>
                     <div class="col-sm-5 controls">
                         <input type="text" class="form-control" name="mark_upto" value="<?php echo $row['mark_upto'];?>"/>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label"><?php echo ('Comment');?></label>
+                    <label class="col-sm-3 control-label"><?php echo ('Açıklama');?></label>
                     <div class="col-sm-5 controls">
                         <input type="text" class="form-control" name="comment" value="<?php echo $row['comment'];?>"/>
                     </div>
                 </div>
                   <div class="form-group">
 						<div class="col-sm-offset-3 col-sm-5">
-							<button type="submit" class="btn btn-info"><?php echo ('Edit Grade');?></button>
+							<button type="submit" class="btn btn-info"><?php echo ('Notu Düzenle');?></button>
 						</div>
 					</div>
                 </form>
@@ -59,6 +59,3 @@ foreach ( $edit_data as $row):
 <?php
 endforeach;
 ?>
-
-
-

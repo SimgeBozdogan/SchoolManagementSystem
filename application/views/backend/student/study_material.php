@@ -2,11 +2,11 @@
     <thead>
         <tr>
             <th>#</th>
-            <th><?php echo ('Date');?></th>
-            <th><?php echo ('Title');?></th>
-            <th><?php echo ('Description');?></th>
-            <th><?php echo ('Class');?></th>
-            <th><?php echo ('Download');?></th>
+            <th><?php echo ('Tarih');?></th>
+            <th><?php echo ('Başlık');?></th>
+            <th><?php echo ('Açıklama');?></th>
+            <th><?php echo ('Sınıf');?></th>
+            <th><?php echo ('İndir');?></th>
         </tr>
     </thead>
 
@@ -21,12 +21,12 @@
                 <td><?php echo $row['description']?></td>
                 <td>
                     <?php $name = $this->db->get_where('class' , array('class_id' => $row['class_id'] ))->row()->name;
-                        echo $name;?>
+                    echo $name;?>
                 </td>
                 <td>
                     <a href="<?php echo base_url().'uploads/document/'.$row['file_name']; ?>" class="btn btn-blue btn-icon icon-left">
                         <i class="entypo-download"></i>
-                        Download
+                        İndir
                     </a>
                 </td>
             </tr>
@@ -48,7 +48,7 @@
             minimumResultsForSearch: -1
         });
 
-        // Highlighted rows
+        // Vurgulanmış satırlar
         $("#table-2 tbody input[type=checkbox]").each(function (i, el)
         {
             var $this = $(el),
@@ -62,7 +62,7 @@
             });
         });
 
-        // Replace Checboxes
+        // Onay kutularını değiştir
         $(".pagination a").click(function (ev)
         {
             replaceCheckboxes();

@@ -1,19 +1,18 @@
-
 <a href="javascript:;" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/student_add/');" 
     class="btn btn-primary pull-right">
         <i class="entypo-plus-circled"></i>
-        <?php echo ('Add New Student');?>
-    </a> 
+        <?php echo ('Yeni Öğrenci Ekle');?>
+</a> 
 <br><br>
 <table class="table table-bordered table-hover table-striped datatable" id="table_export">
     <thead>
         <tr>
-            <th width="80"><div><?php echo ('Roll');?></div></th>
-            <th width="80"><div><?php echo ('Photo');?></div></th>
-            <th><div><?php echo ('Name');?></div></th>
-            <th class="span3"><div><?php echo ('Address');?></div></th>
-            <th><div><?php echo ('Email');?></div></th>
-            <th><div><?php echo ('Options');?></div></th>
+            <th width="80"><div><?php echo ('Sıra');?></div></th>
+            <th width="80"><div><?php echo ('Fotoğraf');?></div></th>
+            <th><div><?php echo ('Ad');?></div></th>
+            <th class="span3"><div><?php echo ('Adres');?></div></th>
+            <th><div><?php echo ('E-posta');?></div></th>
+            <th><div><?php echo ('Seçenekler');?></div></th>
         </tr>
     </thead>
     <tbody>
@@ -30,34 +29,34 @@
                 
                 <div class="btn-group">
                     <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">
-                        Action <span class="caret"></span>
+                    Değiştir <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu dropdown-default pull-right" role="menu">
                         
-                        <!-- STUDENT PROFILE LINK -->
+                        <!-- ÖĞRENCİ PROFİL LİNKİ -->
                         <li>
                             <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_student_profile/<?php echo $row['student_id'];?>');">
                                 <i class="entypo-user"></i>
-                                    <?php echo ('Profile');?>
-                                </a>
-                                        </li>
+                                    <?php echo ('Profil');?>
+                            </a>
+                        </li>
                         
-                        <!-- STUDENT EDITING LINK -->
+                        <!-- ÖĞRENCİ DÜZENLEME LİNKİ -->
                         <li>
                             <a href="#" onclick="showAjaxModal('<?php echo base_url();?>index.php?modal/popup/modal_student_edit/<?php echo $row['student_id'];?>');">
                                 <i class="entypo-pencil"></i>
-                                    <?php echo ('Edit');?>
-                                </a>
-                                        </li>
+                                    <?php echo ('Düzenle');?>
+                            </a>
+                        </li>
                         <li class="divider"></li>
                         
-                        <!-- STUDENT DELETION LINK -->
+                        <!-- ÖĞRENCİ SİLME LİNKİ -->
                         <li>
                             <a href="#" onclick="confirm_modal('<?php echo base_url();?>index.php?teacher/student/<?php echo $class_id;?>/delete/<?php echo $row['student_id'];?>');">
                                 <i class="entypo-trash"></i>
-                                    <?php echo ('Delete');?>
-                                </a>
-                                        </li>
+                                    <?php echo ('Sil');?>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 
@@ -67,9 +66,7 @@
     </tbody>
 </table>
 
-
-
-<!-----  DATA TABLE EXPORT CONFIGURATIONS ----->                      
+<!-----  DATA TABLE EXPORT AYARLARI ----->                      
 <script type="text/javascript">
 
 	jQuery(document).ready(function($)

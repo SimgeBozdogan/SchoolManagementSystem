@@ -30,7 +30,7 @@
         <!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
 
 
-        <!-- DASHBOARD -->
+        <!-- GÖSTERGE PANELİ -->
         <li class="<?php if ($page_name == 'dashboard') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?admin/dashboard">
                 <i class="entypo-gauge"></i>
@@ -38,7 +38,7 @@
             </a>
         </li>
 
-        <!-- CLASS -->
+        <!-- SINIF -->
         <li class="<?php
         if ($page_name == 'class' ||
                 $page_name == 'section')
@@ -62,7 +62,7 @@
             </ul>
         </li>
 
-        <!-- SUBJECT -->
+        <!-- KONU -->
         <li class="<?php if ($page_name == 'subject') echo 'opened active'; ?> ">
             <a href="#">
                 <i class="entypo-docs"></i>
@@ -75,14 +75,14 @@
                     ?>
                     <li class="<?php if ($page_name == 'subject' && $class_id == $row['class_id']) echo 'active'; ?>">
                         <a href="<?php echo base_url(); ?>index.php?admin/subject/<?php echo $row['class_id']; ?>">
-                            <span><?php echo ('Class'); ?> <?php echo $row['name']; ?></span>
+                            <span><?php echo ('Sınıf'); ?> <?php echo $row['name']; ?></span>
                         </a>
                     </li>
                 <?php endforeach; ?>
             </ul>
         </li>
 
-        <!-- CLASS ROUTINE -->
+        <!-- SINIF PROGRAMI -->
         <li class="<?php if ($page_name == 'class_routine') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?admin/class_routine">
                 <i class="entypo-calendar"></i>
@@ -90,7 +90,7 @@
             </a>
         </li>
 
-         <!-- PARENTS -->
+         <!-- EBEVEYNLER -->
          <li class="<?php if ($page_name == 'parent') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?admin/parent">
                 <i class="entypo-user"></i>
@@ -98,7 +98,7 @@
             </a>
         </li>
 
-        <!-- STUDENT -->
+        <!-- ÖĞRENCİ -->
         <li class="<?php
         if ($page_name == 'student_add' ||
 		        $page_name == 'acd_session' ||
@@ -113,7 +113,7 @@
                 <span><?php echo ('Öğrenci Bölümü'); ?></span>
             </a>
             <ul>
-                <!-- STUDENT ADMISSION -->
+                <!-- ÖĞRENCİ KABULÜ -->
                 
                  <li class="<?php if ($page_name == 'acd_session') echo 'active'; ?> ">
                     <a href="<?php echo base_url(); ?>index.php?admin/acd_session">
@@ -129,14 +129,14 @@
                     </a>
                 </li>
 
-                <!-- STUDENT BULK ADMISSION -->
+                <!-- TOPLU ÖĞRENCİ KABULÜ -->
                 <li class="<?php if ($page_name == 'student_bulk_add') echo 'active'; ?> ">
                     <a href="<?php echo base_url(); ?>index.php?admin/student_bulk_add">
                         <span><i class="entypo-dot"></i> <?php echo ('Toplu Öğrenci Kabul Et'); ?></span>
                     </a>
                 </li>
 
-                <!-- STUDENT INFORMATION -->
+                <!-- ÖĞRENCİ BİLGİLERİ -->
                 <li class="<?php if ($page_name == 'student_information') echo 'opened active'; ?> ">
                     <a href="#">
                         <span><i class="entypo-dot"></i> <?php echo ('Öğrenci Bilgileri'); ?></span>
@@ -148,14 +148,14 @@
                             ?>
                             <li class="<?php if ($page_name == 'student_information' && $class_id == $row['class_id']) echo 'active'; ?>">
                                 <a href="<?php echo base_url(); ?>index.php?admin/student_information/<?php echo $row['class_id']; ?>">
-                                    <span><?php echo ('Class'); ?> <?php echo $row['name']; ?></span>
+                                    <span><?php echo ('Sınıf'); ?> <?php echo $row['name']; ?></span>
                                 </a>
                             </li>
                         <?php endforeach; ?>
                     </ul>
                 </li>
 
-                <!-- STUDENT MARKSHEET -->
+                <!-- ÖĞRENCİ NOT BELGESİ -->
                 <li class="<?php if ($page_name == 'student_marksheet') echo 'opened active'; ?> ">
                     <a href="#">
                         <span><i class="entypo-dot"></i> <?php echo ('Öğrenci Not Belgesi'); ?></span>
@@ -167,7 +167,7 @@
                             ?>
                             <li class="<?php if ($page_name == 'student_marksheet' && $class_id == $row['class_id']) echo 'active'; ?>">
                                 <a href="<?php echo base_url(); ?>index.php?admin/student_marksheet/<?php echo $row['class_id']; ?>">
-                                    <span><?php echo ('Class'); ?> <?php echo $row['name']; ?></span>
+                                    <span><?php echo ('Sınıf'); ?> <?php echo $row['name']; ?></span>
                                 </a>
                             </li>
                         <?php endforeach; ?>
@@ -176,7 +176,7 @@
             </ul>
         </li>
 
-        <!-- TEACHER -->
+        <!-- ÖĞRETMEN -->
         <li class="<?php if ($page_name == 'teacher') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?admin/teacher">
                 <i class="entypo-users"></i>
@@ -185,7 +185,7 @@
         </li>
 
 
-        <!-- DAILY ATTENDANCE -->
+        <!-- GÜNLÜK KATILIM -->
         <li class="<?php if ($page_name == 'manage_attendance') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?admin/manage_attendance/<?php echo date("d/m/Y"); ?>">
                 <i class="entypo-chart-area"></i>
@@ -194,7 +194,7 @@
 
         </li>
 
-        <!-- EXAMS -->
+        <!-- SINAVLAR -->
         <li class="<?php
         if ($page_name == 'exam' ||
                 $page_name == 'grade' ||
@@ -230,7 +230,7 @@
             </ul>
         </li>
 
-        <!-- PAYMENT -->
+        <!-- ÖDEME -->
         <li class="<?php if ($page_name == 'invoice') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?admin/invoice">
                 <i class="entypo-credit-card"></i>
@@ -238,7 +238,7 @@
             </a>
         </li>
 
-        <!-- ACCOUNTING -->
+        <!-- MUHASEBE -->
         <li class="<?php
         if ($page_name == 'income' ||
                 $page_name == 'expense' ||
@@ -268,7 +268,7 @@
             </ul>
         </li>
 
-        <!-- LIBRARY -->
+        <!-- KÜTÜPHANE -->
         <li class="<?php if ($page_name == 'book') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?admin/book">
                 <i class="entypo-book"></i>
@@ -276,7 +276,7 @@
             </a>
         </li>
 
-        <!-- TRANSPORT -->
+        <!-- ULAŞIM -->
         <li class="<?php if ($page_name == 'transport') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?admin/transport">
                 <i class="entypo-location"></i>
@@ -284,7 +284,7 @@
             </a>
         </li>
 
-        <!-- DORMITORY -->
+        <!-- YURDUN -->
         <li class="<?php if ($page_name == 'dormitory') echo 'active'; ?> ">
             <a href="<?php echo base_url(); ?>index.php?admin/dormitory">
                 <i class="entypo-home"></i>
@@ -292,59 +292,60 @@
             </a>
         </li>
 
-        <!-- NOTICEBOARD -->
-        <li class="<?php if ($page_name == 'noticeboard') echo 'active'; ?> ">
-            <a href="<?php echo base_url(); ?>index.php?admin/noticeboard">
-                <i class="entypo-doc-text-inv"></i>
-                <span><?php echo ('Duyuru Panosu'); ?></span>
-            </a>
-        </li>
+       <!-- DUYURU PANOSU -->
+<li class="<?php if ($page_name == 'noticeboard') echo 'active'; ?> ">
+    <a href="<?php echo base_url(); ?>index.php?admin/noticeboard">
+        <i class="entypo-doc-text-inv"></i>
+        <span><?php echo ('Duyuru Panosu'); ?></span>
+    </a>
+</li>
 
-        <!-- MESSAGE -->
-        <li class="<?php if ($page_name == 'message') echo 'active'; ?> ">
-            <a href="<?php echo base_url(); ?>index.php?admin/message">
-                <i class="entypo-mail"></i>
-                <span><?php echo ('Mesaj'); ?></span>
-            </a>
-        </li>
+<!-- MESAJ -->
+<li class="<?php if ($page_name == 'message') echo 'active'; ?> ">
+    <a href="<?php echo base_url(); ?>index.php?admin/message">
+        <i class="entypo-mail"></i>
+        <span><?php echo ('Mesaj'); ?></span>
+    </a>
+</li>
 
-        <!-- SETTINGS -->
-        <li class="<?php
-        if ($page_name == 'system_settings' ||
-                $page_name == 'manage_language' ||
-                    $page_name == 'sms_settings')
-                        echo 'opened active';
-        ?> ">
-            <a href="#">
-                <i class="entypo-lifebuoy"></i>
-                <span><?php echo ('Ayarlar'); ?></span>
+<!-- AYARLAR -->
+<li class="<?php
+if ($page_name == 'system_settings' ||
+        $page_name == 'manage_language' ||
+            $page_name == 'sms_settings')
+                echo 'opened active';
+?> ">
+    <a href="#">
+        <i class="entypo-lifebuoy"></i>
+        <span><?php echo ('Ayarlar'); ?></span>
+    </a>
+    <ul>
+        <li class="<?php if ($page_name == 'system_settings') echo 'active'; ?> ">
+            <a href="<?php echo base_url(); ?>index.php?admin/system_settings">
+                <span><i class="entypo-dot"></i> <?php echo ('Genel Ayarlar'); ?></span>
             </a>
-            <ul>
-                <li class="<?php if ($page_name == 'system_settings') echo 'active'; ?> ">
-                    <a href="<?php echo base_url(); ?>index.php?admin/system_settings">
-                        <span><i class="entypo-dot"></i> <?php echo ('Genel Ayarlar'); ?></span>
-                    </a>
-                </li>
-                <li class="<?php if ($page_name == 'sms_settings') echo 'active'; ?> ">
-                    <a href="<?php echo base_url(); ?>index.php?admin/sms_settings">
-                        <span><i class="entypo-dot"></i> <?php echo ('SMS Ayarları'); ?></span>
-                    </a>
-                </li>
-                <li class="<?php if ($page_name == 'manage_language') echo 'active'; ?> ">
-                    <a href="<?php echo base_url(); ?>index.php?admin/manage_language">
-                        <span><i class="entypo-dot"></i> <?php echo ('Dil Ayarları'); ?></span>
-                    </a>
-                </li>
-            </ul>
         </li>
+        <li class="<?php if ($page_name == 'sms_settings') echo 'active'; ?> ">
+            <a href="<?php echo base_url(); ?>index.php?admin/sms_settings">
+                <span><i class="entypo-dot"></i> <?php echo ('SMS Ayarları'); ?></span>
+            </a>
+        </li>
+        <li class="<?php if ($page_name == 'manage_language') echo 'active'; ?> ">
+            <a href="<?php echo base_url(); ?>index.php?admin/manage_language">
+                <span><i class="entypo-dot"></i> <?php echo ('Dil Ayarları'); ?></span>
+            </a>
+        </li>
+    </ul>
+</li>
 
-        <!-- ACCOUNT -->
-        <li class="<?php if ($page_name == 'manage_profile') echo 'active'; ?> ">
-            <a href="<?php echo base_url(); ?>index.php?admin/manage_profile">
-                <i class="entypo-lock"></i>
-                <span><?php echo ('Hesap'); ?></span>
-            </a>
-        </li>
+<!-- HESAP -->
+<li class="<?php if ($page_name == 'manage_profile') echo 'active'; ?> ">
+    <a href="<?php echo base_url(); ?>index.php?admin/manage_profile">
+        <i class="entypo-lock"></i>
+        <span><?php echo ('Hesap'); ?></span>
+    </a>
+</li>
+
 
     </ul>
 

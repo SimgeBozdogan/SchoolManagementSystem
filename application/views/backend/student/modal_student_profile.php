@@ -27,7 +27,6 @@ foreach($student_info as $row):?>
 			
 		</div>
 		
-		
 	</header>
 	
 	<section class="profile-info-tabs">
@@ -40,54 +39,54 @@ foreach($student_info as $row):?>
                 
                     <?php if($row['class_id'] != ''):?>
                     <tr>
-                        <td>Class</td>
-                        <td><b><?php echo $this->crud_model->get_class_name($row['class_id']);?></b></td>
+                        <td>Sınıf</td>
+                        <td><b><?php echo $this->crud_model->get_class_name($row['class_id']); ?></b></td>
                     </tr>
-                    <?php endif;?>
+                    <?php endif; ?>
                 
-                    <?php if($row['roll'] != ''):?>
+                    <?php if ($row['roll'] != ''): ?>
                     <tr>
-                        <td>Roll</td>
-                        <td><b><?php echo $row['roll'];?></b></td>
+                        <td>Numara</td>
+                        <td><b><?php echo $row['roll']; ?></b></td>
                     </tr>
-                    <?php endif;?>
+                    <?php endif; ?>
                 
-                    <?php if($row['birthday'] != ''):?>
+                    <?php if ($row['birthday'] != ''): ?>
                     <tr>
-                        <td>Birthday</td>
-                        <td><b><?php echo $row['birthday'];?></b></td>
+                        <td>Doğum Günü</td>
+                        <td><b><?php echo $row['birthday']; ?></b></td>
                     </tr>
-                    <?php endif;?>
+                    <?php endif; ?>
                 
-                    <?php if($row['sex'] != ''):?>
+                    <?php if ($row['sex'] != ''): ?>
                     <tr>
-                        <td>Gender</td>
-                        <td><b><?php echo $row['sex'];?></b></td>
+                        <td>Cinsiyet</td>
+                        <td><b><?php echo $row['sex']; ?></b></td>
                     </tr>
-                    <?php endif;?>
+                    <?php endif; ?>
                 
                 
-                    <?php if($row['phone'] != ''):?>
+                    <?php if ($row['phone'] != ''): ?>
                     <tr>
-                        <td>Phone</td>
-                        <td><b><?php echo $row['phone'];?></b></td>
+                        <td>Telefon</td>
+                        <td><b><?php echo $row['phone']; ?></b></td>
                     </tr>
-                    <?php endif;?>
+                    <?php endif; ?>
                 
-                    <?php if($row['email'] != ''):?>
+                    <?php if ($row['email'] != ''): ?>
                     <tr>
-                        <td>Email</td>
-                        <td><b><?php echo $row['email'];?></b></td>
+                        <td>E-posta</td>
+                        <td><b><?php echo $row['email']; ?></b></td>
                     </tr>
-                    <?php endif;?>
+                    <?php endif; ?>
                 
-                    <?php if($row['address'] != ''):?>
+                    <?php if ($row['address'] != ''): ?>
                     <tr>
-                        <td>Address</td>
-                        <td><b><?php echo $row['address'];?></b>
+                        <td>Adres</td>
+                        <td><b><?php echo $row['address']; ?></b>
                         </td>
                     </tr>
-                    <?php endif;?>
+                    <?php endif; ?>
                     
                 </table>
 			</div>
@@ -99,4 +98,4 @@ foreach($student_info as $row):?>
 </div>
 
 
-<?php endforeach;?>
+<?php endforeach; ?>

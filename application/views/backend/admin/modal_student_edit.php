@@ -8,7 +8,7 @@ foreach ( $edit_data as $row):
         	<div class="panel-heading">
             	<div class="panel-title" >
             		<i class="entypo-plus-circled"></i>
-					<?php echo ('Edit Student');?>
+					<?php echo ('Öğrenci Düzenle');?>
             	</div>
             </div>
 			<div class="panel-body">
@@ -18,7 +18,7 @@ foreach ( $edit_data as $row):
                 	
 	
 					<div class="form-group">
-						<label for="field-1" class="col-sm-3 control-label"><?php echo ('Photo');?></label>
+						<label for="field-1" class="col-sm-3 control-label"><?php echo ('Fotoğraf');?></label>
                         
 						<div class="col-sm-5">
 							<div class="fileinput fileinput-new" data-provides="fileinput">
@@ -28,30 +28,30 @@ foreach ( $edit_data as $row):
 								<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px"></div>
 								<div>
 									<span class="btn btn-white btn-file">
-										<span class="fileinput-new">Select image</span>
-										<span class="fileinput-exists">Change</span>
+										<span class="fileinput-new">Resim Seç</span>
+										<span class="fileinput-exists">Değiştir</span>
 										<input type="file" name="userfile" accept="image/*">
 									</span>
-									<a href="#" class="btn btn-orange fileinput-exists" data-dismiss="fileinput">Remove</a>
+									<a href="#" class="btn btn-orange fileinput-exists" data-dismiss="fileinput">Kaldır</a>
 								</div>
 							</div>
 						</div>
 					</div>
 	
 					<div class="form-group">
-						<label for="field-1" class="col-sm-3 control-label"><?php echo ('Name');?></label>
+						<label for="field-1" class="col-sm-3 control-label"><?php echo ('Ad');?></label>
                         
 						<div class="col-sm-5">
-							<input type="text" class="form-control" name="name" data-validate="required" data-message-required="<?php echo ('Value Required');?>" value="<?php echo $row['name'];?>">
+							<input type="text" class="form-control" name="name" data-validate="required" data-message-required="<?php echo ('Değer Gerekli');?>" value="<?php echo $row['name'];?>">
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Parent');?></label>
+						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Ebeveyn');?></label>
                         
 						<div class="col-sm-5">
-							<select name="parent_id" class="form-control" data-validate="required" data-message-required="<?php echo ('Value Required');?>">
-                              <option value=""><?php echo ('Select');?></option>
+							<select name="parent_id" class="form-control" data-validate="required" data-message-required="<?php echo ('Değer Gerekli');?>">
+                              <option value=""><?php echo ('Seç');?></option>
                               <?php 
 									$parents = $this->db->get('parent')->result_array();
 									foreach($parents as $row3):
@@ -68,13 +68,13 @@ foreach ( $edit_data as $row):
 					</div>
 					
 					<div class="form-group">
-						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Class');?></label>
+						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Sınıf');?></label>
                         
 						<div class="col-sm-5">
 							<select name="class_id" class="form-control" data-validate="required" id="class_id" 
-								data-message-required="<?php echo ('Value Required');?>"
+								data-message-required="<?php echo ('Değer Gerekli');?>"
 									onchange="return get_class_sections(this.value)">
-                              <option value=""><?php echo ('Select');?></option>
+                              <option value=""><?php echo ('Seç');?></option>
                               <?php 
 									$classes = $this->db->get('class')->result_array();
 									foreach($classes as $row2):
@@ -92,10 +92,10 @@ foreach ( $edit_data as $row):
 
 					
 						<div class="form-group">
-							<label for="field-2" class="col-sm-3 control-label"><?php echo ('Section');?></label>
+							<label for="field-2" class="col-sm-3 control-label"><?php echo ('Bölüm');?></label>
 			                    <div class="col-sm-5">
 			                        <select name="section_id" class="form-control" id="section_selector_holder">
-			                            <option value=""><?php echo ('Select class first');?></option>
+			                            <option value=""><?php echo ('Önce sınıf seçin');?></option>
 				                        
 				                    </select>
 				                </div>
@@ -103,7 +103,7 @@ foreach ( $edit_data as $row):
 					
 					
 					<div class="form-group">
-						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Roll');?></label>
+						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Numara');?></label>
                         
 						<div class="col-sm-5">
 							<input type="text" class="form-control" name="roll" value="<?php echo $row['roll'];?>" >
@@ -111,7 +111,7 @@ foreach ( $edit_data as $row):
 					</div>
 					
 					<div class="form-group">
-						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Birthday');?></label>
+						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Doğum Günü');?></label>
                         
 						<div class="col-sm-5">
 							<input type="text" class="form-control datepicker" name="birthday" value="<?php echo $row['birthday'];?>" data-start-view="2">
@@ -119,19 +119,19 @@ foreach ( $edit_data as $row):
 					</div>
 					
 					<div class="form-group">
-						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Gender');?></label>
+						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Cinsiyet');?></label>
                         
 						<div class="col-sm-5">
 							<select name="sex" class="form-control">
-                              <option value=""><?php echo ('Select');?></option>
-                              <option value="Male" <?php if($row['sex'] == 'Male')echo 'selected';?>><?php echo ('Male');?></option>
-                              <option value="Female"<?php if($row['sex'] == 'Female')echo 'selected';?>><?php echo ('Female');?></option>
+                              <option value=""><?php echo ('Seç');?></option>
+                              <option value="Erkek" <?php if($row['sex'] == 'Erkek')echo 'selected';?>><?php echo ('Erkek');?></option>
+                              <option value="Kız"<?php if($row['sex'] == 'Kız')echo 'selected';?>><?php echo ('Kız');?></option>
                           </select>
 						</div> 
 					</div>
 					
 					<div class="form-group">
-						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Address');?></label>
+						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Adres');?></label>
                         
 						<div class="col-sm-5">
 							<input type="text" class="form-control" name="address" value="<?php echo $row['address'];?>" >
@@ -139,7 +139,7 @@ foreach ( $edit_data as $row):
 					</div>
 					
 					<div class="form-group">
-						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Phone');?></label>
+						<label for="field-2" class="col-sm-3 control-label"><?php echo ('Telefon');?></label>
                         
 						<div class="col-sm-5">
 							<input type="text" class="form-control" name="phone" value="<?php echo $row['phone'];?>" >
@@ -147,7 +147,7 @@ foreach ( $edit_data as $row):
 					</div>
                     
 					<div class="form-group">
-						<label for="field-1" class="col-sm-3 control-label"><?php echo ('Email');?></label>
+						<label for="field-1" class="col-sm-3 control-label"><?php echo ('E-posta');?></label>
 						<div class="col-sm-5">
 							<input type="text" class="form-control" name="email" value="<?php echo $row['email'];?>">
 						</div>
@@ -155,7 +155,7 @@ foreach ( $edit_data as $row):
                     
                     <div class="form-group">
 						<div class="col-sm-offset-3 col-sm-5">
-							<button type="submit" class="btn btn-info"><?php echo ('Edit Student');?></button>
+							<button type="submit" class="btn btn-info"><?php echo ('Öğrenciyi Düzenle');?></button>
 						</div>
 					</div>
                 <?php echo form_close();?>

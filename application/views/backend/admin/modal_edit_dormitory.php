@@ -9,19 +9,19 @@ $edit_data		=	$this->db->get_where('dormitory' , array('dormitory_id' => $param2
         <?php echo form_open(base_url() . 'index.php?admin/dormitory/do_update/'.$row['dormitory_id'] , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
             <div class="padded">
                 <div class="form-group">
-                    <label class="col-sm-3 control-label"><?php echo ('Dormitory Name');?></label>
+                    <label class="col-sm-3 control-label"><?php echo ('Yurt Adı');?></label>
                     <div class="col-sm-5">
                         <input type="text" class="form-control" name="name" value="<?php echo $row['name'];?>"/>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label"><?php echo ('Number of room');?></label>
+                    <label class="col-sm-3 control-label"><?php echo ('Oda Sayısı');?></label>
                     <div class="col-sm-5">
                         <input type="text" class="form-control" name="number_of_room" value="<?php echo $row['number_of_room'];?>"/>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label"><?php echo ('Description');?></label>
+                    <label class="col-sm-3 control-label"><?php echo ('Açıklama');?></label>
                     <div class="col-sm-5">
                         <input type="text" class="form-control" name="description" value="<?php echo $row['description'];?>"/>
                     </div>
@@ -29,7 +29,7 @@ $edit_data		=	$this->db->get_where('dormitory' , array('dormitory_id' => $param2
             </div>
             <div class="form-group">
               <div class="col-sm-offset-3 col-sm-5">
-                  <button type="submit" class="btn btn-info"><?php echo ('Edit Dormitory');?></button>
+                  <button type="submit" class="btn btn-info"><?php echo ('Yurtu Düzenle');?></button>
               </div>
             </div>
         </form>

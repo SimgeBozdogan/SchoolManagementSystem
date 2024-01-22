@@ -1242,9 +1242,9 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`settings_id`, `type`, `description`) VALUES
-(1, 'system_name', 'School Management System'),
-(2, 'system_title', 'School Management System'),
-(3, 'address', '93 Elm Drive, Westbury'),
+(1, 'system_name', 'Okul Yönetim Sistemi'),
+(2, 'system_title', 'Okul Yönetim Sistemi'),
+(3, 'address', 'Turkey'),
 (4, 'phone', '7410000010'),
 (5, 'paypal_email', 'demomail@school.com'),
 (6, 'currency', '$'),

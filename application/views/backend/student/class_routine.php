@@ -1,18 +1,18 @@
 <div class="row">
 	<div class="col-md-12">
     
-    	<!------CONTROL TABS START------->
+    	<!------KONTROL SEKMELERİ BAŞLANGIÇ------->
 		<ul class="nav nav-tabs bordered">
 			<li class="active">
             	<a href="#list" data-toggle="tab"><i class="entypo-menu"></i> 
-					<?php echo ('Class Routine List');?>
+					<?php echo ('Sınıf Programı Listesi');?>
                     	</a></li>
 		</ul>
-    	<!------CONTROL TABS END------->
+    	<!------KONTROL SEKMELERİ SON------->
         
 	
 		<div class="tab-content">
-            <!----TABLE LISTING STARTS--->
+            <!----TABLO LİSTESİ BAŞLANGIÇ--->
             <div class="tab-pane active" id="list">
 				<div class="panel-group joined" id="accordion-test-2">
                 	
@@ -22,7 +22,7 @@
                                 <div class="panel-heading">
                                 		<h4 class="panel-title">
                                     <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapse<?php echo $class_id;?>">
-                                        <i class="entypo-rss"></i> Class <?php echo $class_id;?>
+                                        <i class="entypo-rss"></i> Sınıf <?php echo $class_id;?>
                                     </a>
                                     </h4>
                                 </div>
@@ -70,12 +70,8 @@
                             </div>
   				</div>
 			</div>
-            <!----TABLE LISTING ENDS--->
-            
-            
-			
+            <!----TABLO LİSTESİ SON--->
             
 		</div>
 	</div>
 </div>
-
