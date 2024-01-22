@@ -2,7 +2,7 @@
 
 **Database Name: schooligniter**
 
-**Developed by Simge Bozdogan**
+
 
 **Recommended PHP Version 5.6**
 
