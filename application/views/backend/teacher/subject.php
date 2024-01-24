@@ -21,7 +21,7 @@
                 	<thead>
                 		<tr>
                     		<th><div><?php echo ('Sınıf');?></div></th>
-                    		<th><div><?php echo ('Konu İsmi');?></div></th>
+                    		<th><div><?php echo ('Ders İsmi');?></div></th>
                     		<th><div><?php echo ('Öğretmen');?></div></th>
                     		<th><div><?php echo ('Seçenekler');?></div></th>
 						</tr>

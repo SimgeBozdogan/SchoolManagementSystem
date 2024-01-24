@@ -5,11 +5,11 @@
 		<ul class="nav nav-tabs bordered">
 			<li class="active">
             	<a href="#list" data-toggle="tab"><i class="entypo-menu"></i> 
-					<?php echo ('Konu Listesi');?>
+					<?php echo ('Ders Listesi');?>
                     	</a></li>
 			<li>
             	<a href="#add" data-toggle="tab"><i class="entypo-plus-circled"></i>
-					<?php echo ('Konu Ekle');?>
+					<?php echo ('Ders Ekle');?>
                     	</a></li>
 		</ul>
     	<!------CONTROL TABS END------>
@@ -21,7 +21,7 @@
                 	<thead>
                 		<tr>
                     		<th><div><?php echo ('Sınıf');?></div></th>
-                    		<th><div><?php echo ('Konu İsmi');?></div></th>
+                    		<th><div><?php echo ('Ders İsmi');?></div></th>
                     		<th><div><?php echo ('Öğretmen');?></div></th>
                     		<th><div><?php echo ('Seçenekler');?></div></th>
 						</tr>
