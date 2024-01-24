@@ -538,4 +538,15 @@ class Teacher extends CI_Controller
         $page_data['page_title']                = get_phrase('private_messaging');
         $this->load->view('backend/index', $page_data);
     }
+
+     /******KVKK***/
+     function KVKK($param1 = '', $param2 = '', $param3 = '')
+     {
+         $page_data['page_name']  = 'KVKK';
+         $page_data['page_title'] = 'KVKK';
+         $page_data['edit_data']  = $this->db->get_where('admin', array(
+             'admin_id' => $this->session->userdata('admin_id')
+         ))->result_array();
+         $this->load->view('backend/index', $page_data);
+     }
 }
