@@ -346,6 +346,13 @@ if ($page_name == 'system_settings' ||
     </a>
 </li>
 
+<!-- KVKK -->
+<li class="<?php if ($page_name == 'KVKK') echo 'active'; ?> ">
+    <a href="<?php echo base_url(); ?>index.php?admin/KVKK">
+        <i class="entypo-doc"></i>
+        <span><?php echo ('KVKK'); ?></span>
+    </a>
+</li>
 
     </ul>
 
